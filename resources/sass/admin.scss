@@ -1,0 +1,31 @@
+// Variables
+@import 'variables';
+
+//Bootstrap 3.3.6
+@import '~admin-lte/bootstrap/css/bootstrap.min.css';
+@import '~font-awesome/css/font-awesome.min.css';
+@import '~ionicons-npm/css/ionicons.min.css';
+
+
+//DataTables -->
+@import '~datatables/media/css/jquery.dataTables.min.css';
+
+//Theme style 
+@import '~admin-lte/dist/css/AdminLTE.min.css';
+@import '~admin-lte/dist/css/skins/skin-blue.min.css';
+
+//I checkbox css
+@import '~admin-lte/plugins/iCheck/square/blue.css';
+@import '~admin-lte/plugins/iCheck/all.css';
+
+//chossen
+@import "~chosen-js/chosen.css";
+
+// Lobibox
+@import "~lobibox/dist/css/lobibox.min.css";
+
+// Colorbox
+@import "~jquery-colorbox/example1/colorbox.css";
+
+//Custom css
+@import '../css/admin/developer.css';

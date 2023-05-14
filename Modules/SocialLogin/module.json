@@ -1,0 +1,13 @@
+{
+    "name": "SocialLogin",
+    "alias": "sociallogin",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\SocialLogin\\Providers\\SocialLoginServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

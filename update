@@ -1,0 +1,10 @@
+200 Success Ok get data succesfully
+201 Created Record insert data successfully
+400 Error Bad Request
+422 Error Validiation Error
+401 Error Unauthorized Error
+
+
+
+Eastern Standard Time (EST), when observing standard time (autumn/winter), are five hours behind Coordinated Universal Time (UTC−05:00).
+Eastern Daylight Time (EDT), when observing daylight saving time (spring/summer), are four hours behind Coordinated Universal Time (UTC−04:00). On the second Sund

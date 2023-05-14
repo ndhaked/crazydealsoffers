@@ -1,0 +1,2197 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Deal Listing App",
+        "version": "1.0.0",
+        "title": "Deal Listing App",
+        "termsOfService": "",
+        "contact": {
+            "email": "deallistingapp@yopmail.com"
+        }
+    },
+    "host": "192.168.0.209/deallistingapp/",
+    "tags": [
+        {
+            "name": "Auth",
+            "description": "APIs related to Login and Sign Up processes"
+        },
+        {
+            "name": "Profile",
+            "description": "APIs related to auth user Profile"
+        },
+        {
+            "name": "CMSPages",
+            "description": "APIs related to CMS pages"
+        },
+        {
+            "name": "Deals",
+            "description": "APIs related to products deal"
+        },
+        {
+            "name": "Comments",
+            "description": "APIs related to products deal comment"
+        },
+         {
+            "name": "Blog",
+            "description": "APIs related to blogs"
+        },
+         {
+            "name": "Homepage",
+            "description": "APIs related to Homepage Data"
+        },{
+            "name": "Categories",
+            "description": "APIs related to Categories"
+        },{
+            "name": "PushNotifications",
+            "description": "APIs related to Push Notifications"
+        },
+    ],
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "User Login.",
+                "description": "",
+                "operationId": "login",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Login"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/socia-login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Social Login",
+                "description": "",
+                "operationId": "SocialLogin",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/SocialLogin"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/register": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Customer Registration for OTP.",
+                "description": "",
+                "operationId": "register",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Registration"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        }, 
+        "/api/resend-otp": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Resend OTP.",
+                "description": "Resend OTP",
+                "operationId": "resend-otp",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ResendOTP"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/password/email": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Forgot Password Request",
+                "description": "",
+                "operationId": "forgotPassword",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ForgotPassword"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/password/reset": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Password Reset",
+                "description": "",
+                "operationId": "PasswordReset",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/PasswordReset"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/guest-register": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Guest User Registration",
+                "description": "",
+                "operationId": "Gguestregister",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/IsGguest"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Gguestregister"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/user-profile": {
+            "get": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Get User Profile Details",
+                "description": "",
+                "operationId": "userProfile",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/signed-url": {
+            "post": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Profile Signed Url For Image",
+                "description": "",
+                "operationId": "userProfileSignedUrl",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/user-update": {
+            "post": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Update User Profile Details",
+                "description": "",
+                "operationId": "UserUpdate",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    },
+                     {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UserUpdate"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/user-changepassword": {
+            "post": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Update User Password",
+                "description": "",
+                "operationId": "UpdatePassword",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    },
+                     {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdatePassword"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/update-notification-status": {
+            "post": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Update Notification Status",
+                "description": "",
+                "operationId": "UpdateNotificationStatus",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/IsGguest"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    },
+                     {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdateNotificationStatus"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/delete-account-permanently": {
+            "post": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Delete User Permanently",
+                "description": "",
+                "operationId": "UserDeletePermently",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    }
+                     
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/logout": {
+            "post": {
+                "tags": [
+                    "Profile"
+                ],
+                "summary": "Use Logout and Reset Device Token",
+                "description": "",
+                "operationId": "Logout",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/favorite-add-remove": {
+            "post": {
+                "tags": [
+                    "Deals"
+                ],
+                "summary": "favorite and un favorite Deals",
+                "description": "",
+                "operationId": "FavUnfavDeals",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/IsGguest"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    },
+                     {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/FavUnfavDeals"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/favorite-list": {
+            "post": {
+                "tags": [
+                    "Deals"
+                ],
+                "summary": "favorite Deals lisitng",
+                "description": "",
+                "operationId": "FavoriteDealsListing",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/IsGguest"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    },
+                     {
+                        "in": "body",
+                        "name": "body",
+                        "schema": {
+                            "$ref": "#/definitions/FavoriteDealsListing"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        }, 
+        "/api/product-list": {
+            "post": {
+                "tags": [
+                    "Deals"
+                ],
+                "summary": "All Deals lisitng",
+                "description": "",
+                "operationId": "AllDealsListing",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/IsGguest"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    },
+                     {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/AllDealsListing"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/product-detail": {
+            "post": {
+                "tags": [
+                    "Deals"
+                ],
+                "summary": "Deals / product detail",
+                "description": "",
+                "operationId": "ProductDetails",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/IsGguest"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    },
+                     {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ProductDetails"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        }, 
+        "/api/deal-off-the-day": {
+            "post": {
+                "tags": [
+                    "Deals"
+                ],
+                "summary": "Deal off the day lisitng",
+                "description": "",
+                "operationId": "DealoffTheDayListing",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    },
+                     {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/DealoffTheDayListing"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/like-dislike": {
+            "post": {
+                "tags": [
+                    "Deals"
+                ],
+                "summary": "Deal Like and dislike",
+                "description": "",
+                "operationId": "DealLikeDislike",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/IsGguest"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    },
+                     {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/DealLikeDislike"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+
+        "/api/add-comment": {
+            "post": {
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "add Comments",
+                "description": "",
+                "operationId": "addComment",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/IsGguest"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    },
+                     {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/addComment"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/add-comment-reply": {
+            "post": {
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "add Comment Reply",
+                "description": "",
+                "operationId": "addCommentReply",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/IsGguest"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    },
+                     {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/addCommentReply"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/product-comments": {
+            "post": {
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "Get Comments",
+                "description": "",
+                "operationId": "getComment",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/IsGguest"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    },
+                     {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/getComment"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/get-comments-reply": {
+            "post": {
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "Get Comment Reply",
+                "description": "",
+                "operationId": "getCommentReply",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/IsGguest"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    },
+                     {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/getCommentReply"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/comment-like-dislike": {
+            "post": {
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "Comments Like and dislike",
+                "description": "",
+                "operationId": "CommentsLikeDislike",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/IsGguest"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    },
+                     {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CommentsLikeDislike"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/get-users": {
+            "post": {
+                "tags": [
+                    "Comments"
+                ],
+                "summary": "getTagUsers",
+                "description": "",
+                "operationId": "getTagUsers",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                     {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/getTagUsers"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+
+        "/api/blog-list": {
+            "post": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "Blog List",
+                "description": "",
+                "operationId": "BlogList",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/blog-detail": {
+            "post": {
+                "tags": [
+                    "Blog"
+                ],
+                "summary": "Blog detail",
+                "description": "",
+                "operationId": "BlogDetails",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    },
+                     {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/BlogDetails"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        }, 
+
+
+        "/api/pages/privacy-policy": {
+            "get": {
+                "tags": [
+                    "CMSPages"
+                ],
+                "summary": "Get Privacy Policy Details",
+                "description": "",
+                "operationId": "PrivacyPolicy",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/pages/terms-and-condition": {
+            "get": {
+                "tags": [
+                    "CMSPages"
+                ],
+                "summary": "Get Terms Condition Details",
+                "description": "",
+                "operationId": "TermsCondition",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/pages/aboutus": {
+            "get": {
+                "tags": [
+                    "CMSPages"
+                ],
+                "summary": "Get About Us Details",
+                "description": "",
+                "operationId": "Aboutus",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/pages/how-it-works": {
+            "get": {
+                "tags": [
+                    "CMSPages"
+                ],
+                "summary": "Get how it works Details",
+                "description": "",
+                "operationId": "how-it-works",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/pages/faq": {
+            "get": {
+                "tags": [
+                    "CMSPages"
+                ],
+                "summary": "Get faq Details",
+                "description": "",
+                "operationId": "Faq",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+
+        "/api/get-homepage-data": {
+            "post": {
+                "tags": [
+                    "Homepage"
+                ],
+                "summary": "Get Homepage records",
+                "description": "",
+                "operationId": "homepageData",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/IsGguest"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        }, 
+        "/api/get-autocomplete-data": {
+            "post": {
+                "tags": [
+                    "Homepage"
+                ],
+                "summary": "Get Homepage search Data",
+                "description": "",
+                "operationId": "HomepageSearchData",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/IsGguest"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    },
+                     {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/HomepageSearchData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/category-list": {
+            "post": {
+                "tags": [
+                    "Categories"
+                ],
+                "summary": "Get Categories listing",
+                "description": "",
+                "operationId": "CategoriesData",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/notification-list": {
+            "post": {
+                "tags": [
+                    "PushNotifications"
+                ],
+                "summary": "Get notification listing",
+                "description": "",
+                "operationId": "PushNotificationsList",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    },
+                    {
+                        "$ref": "#/parameters/IsGguest"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/PushNotificationsList"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/mark-to-read-notification": {
+            "post": {
+                "tags": [
+                    "PushNotifications"
+                ],
+                "summary": "Mark read notifications fro user",
+                "description": "",
+                "operationId": "markReadNotification",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/Platform"
+                    },
+                    {
+                        "$ref": "#/parameters/Version"
+                    },
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    },
+                    {
+                        "$ref": "#/parameters/IsGguest"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/markReadNotification"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+    },
+    "definitions": {
+        "Login": {
+            "type": "object",
+            "required": [
+                "email",
+                "password"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "example": "testuser@yopmail.com",
+                    "description": "Email of user"
+                },
+                "password": {
+                    "type": "string",
+                    "example": "12345678",
+                    "description": "Password of user"
+                }
+            },
+            "xml": {
+                "name": "Login"
+            }
+        },
+        "SocialLogin": {
+            "type": "object",
+            "required": [
+                "email",
+                "phone",
+                "provider_name",
+                "provider_id"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "example": "John Duo",
+                    "description": "Name of user"
+                },
+                "email": {
+                    "type": "string",
+                    "example": "testuser@yopmail.com",
+                    "description": "Email of user"
+                },
+                "phone": {
+                    "type": "string",
+                    "example": "8209990522",
+                    "description": "Phone of user"
+                },
+                "password": {
+                    "type": "string",
+                    "example": "12345678",
+                    "description": "Password of user"
+                },
+                 "device_token": {
+                    "type": "string",
+                    "example": "",
+                    "description": "Device token"
+                }, 
+                "provider_name": {
+                    "type": "string",
+                    "example": "facebook",
+                    "description": "Provider name"
+                }, 
+                "provider_id": {
+                    "type": "string",
+                    "example": "256895865",
+                    "description": "provide id"
+                },
+                "is_email_edit": {
+                    "type": "number",
+                    "example": "1",
+                    "description": "flag if email is edit by user"
+                },
+                "isotp": {
+                    "type": "number",
+                    "example": "1",
+                    "description": "flag for check otp verify"
+                },
+                "otp": {
+                    "type": "number",
+                    "example": "1234",
+                    "description": "otp on getting on email"
+                }
+            },
+            "xml": {
+                "name": "Registration"
+            }
+        }, 
+        "Registration": {
+            "type": "object",
+            "required": [
+                "name",
+                "email",
+                "phone",
+                "password",
+                "isotp",
+                "otp"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "example": "John Duo",
+                    "description": "Name of user"
+                },
+                "email": {
+                    "type": "string",
+                    "example": "testuser@yopmail.com",
+                    "description": "Email of user"
+                },
+                "phone": {
+                    "type": "string",
+                    "example": "8209990522",
+                    "description": "Phone of user"
+                },
+                "password": {
+                    "type": "string",
+                    "example": "12345678",
+                    "description": "Password of user"
+                },
+                "device_token": {
+                    "type": "string",
+                    "example": "",
+                    "description": "Device token"
+                },
+                "isotp": {
+                    "type": "number",
+                    "example": "1",
+                    "description": "flaf for check otp verify"
+                },
+                "otp": {
+                    "type": "number",
+                    "example": "1234",
+                    "description": "otp on getting on email"
+                }
+            },
+            "xml": {
+                "name": "Registration"
+            }
+        }, 
+        "ResendOTP": {
+            "type": "object",
+            "required": [
+                "name",
+                "email"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "example": "John Duo",
+                    "description": "Name of user"
+                },
+                "email": {
+                    "type": "string",
+                    "example": "testuser@yopmail.com",
+                    "description": "Email of user"
+                }
+            },
+            "xml": {
+                "name": "ResendOTP"
+            }
+        },
+        "ForgotPassword": {
+            "type": "object",
+            "required": [
+                "email",
+                "isotp",
+                "otp"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "example": "testuser@yopmail.com",
+                    "description": "Email of user"
+                },
+                "isotp": {
+                    "type": "number",
+                    "example": "1",
+                    "description": "flag for check otp verify"
+                },
+                "otp": {
+                    "type": "number",
+                    "example": "1234",
+                    "description": "otp on getting on email"
+                }
+            },
+            "xml": {
+                "name": "ForgotPassword"
+            }
+        }, 
+        "PasswordReset": {
+            "type": "object",
+            "required": [
+                "email",
+                "password",
+                "token"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "example": "testuser@yopmail.com",
+                    "description": "Email of user"
+                },
+                "password": {
+                    "type": "number",
+                    "example": "12345678",
+                    "description": "New password for reset"
+                },
+                "token": {
+                    "type": "number",
+                    "example": "ffe508f9b03962d73889dc2b97543ba161d518cd9b1dbac05d819e120d9834e1",
+                    "description": "token on getting after otp verify"
+                }
+            },
+            "xml": {
+                "name": "PasswordReset"
+            }
+        }, 
+        "Gguestregister": {
+            "type": "object",
+            "required": [
+                "device_token",
+                "device_uid"
+            ],
+            "properties": {
+                "device_uid": {
+                    "type": "string",
+                    "example": "DEV123",
+                    "description": "Device id"
+                },
+                "device_token": {
+                    "type": "string",
+                    "example": "",
+                    "description": "Device token"
+                },
+            },
+            "xml": {
+                "name": "Gguestregister"
+            }
+        }, 
+        "UserUpdate": {
+            "type": "object",
+            "required": [
+                "name",
+                "phone"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "example": "Nirbhay Dhaked",
+                    "description": "Name of user"
+                },
+                "phone": {
+                    "type": "number",
+                    "example": "9269968965",
+                    "description": "Phone number of user"
+                }
+            },
+            "xml": {
+                "name": "UserUpdate"
+            }
+        }, 
+        "UpdatePassword": {
+            "type": "object",
+            "required": [
+                "old_password",
+                "new_password",
+                "confirm_password"
+            ],
+            "properties": {
+                "old_password": {
+                    "type": "string",
+                    "example": "12345678",
+                    "description": "user Old Password"
+                },
+                "new_password": {
+                    "type": "number",
+                    "example": "123456789",
+                    "description": "New Password"
+                }, 
+                "confirm_password": {
+                    "type": "number",
+                    "example": "123456789",
+                    "description": "Confirm New Password"
+                }
+            },
+            "xml": {
+                "name": "UpdatePassword"
+            }
+        }, 
+        "UpdateNotificationStatus": {
+            "type": "object",
+            "required": [
+                "notification_status",
+            ],
+            "properties": {
+                "notification_status": {
+                    "type": "boolean",
+                    "example": "1",
+                    "description": "notification status 1 or 0"
+                },
+                "device_uid": {
+                    "type": "boolean",
+                    "example": "DEV123",
+                    "description": "device id for guest user"
+                },
+            },
+            "xml": {
+                "name": "UpdateNotificationStatus"
+            }
+        }, 
+        "FavUnfavDeals": {
+            "type": "object",
+            "required": [
+                "product_id",
+                "type"
+            ],
+            "properties": {
+                "product_id": {
+                    "type": "number",
+                    "example": "1",
+                    "description": "product id"
+                },
+                "type": {
+                    "type": "string",
+                    "example": "fav",
+                    "description": "fav and unfav"
+                },
+                "device_uid": {
+                    "type": "string",
+                    "example": "DEV123",
+                    "description": "device userid"
+                }
+            },
+            "xml": {
+                "name": "FavUnfavDeals"
+            }
+        }, 
+        "FavoriteDealsListing": {
+            "type": "object",
+            "required": [
+                "device_uid",
+            ],
+            "properties": {
+                "device_uid": {
+                    "type": "string",
+                    "example": "DEV123",
+                    "description": "device userid"
+                }
+            },
+            "xml": {
+                "name": "FavoriteDealsListing"
+            }
+        }, 
+        "AllDealsListing": {
+            "type": "object",
+            "required": [
+                
+            ],
+            "properties": {
+                "coupon_code": {
+                    "type": "string",
+                    "example": "",
+                    "description": "product coupon code"
+                },
+                "name": {
+                    "type": "string",
+                    "example": "",
+                    "description": "name of product name"
+                },
+                "device_uid": {
+                    "type": "string",
+                    "example": "DEV123",
+                    "description": "Device user id"
+                }
+            },
+            "xml": {
+                "name": "AllDealsListing"
+            }
+        },
+        "ProductDetails": {
+            "type": "object",
+            "required": [
+                "slug"
+            ],
+            "properties": {
+                "slug": {
+                    "type": "string",
+                    "example": "4-piece-sheet-sets",
+                    "description": "product slug"
+                }
+            },
+            "xml": {
+                "name": "ProductDetails"
+            }
+        },
+        "DealoffTheDayListing": {
+            "type": "object",
+            "required": [
+                
+            ],
+            "properties": {
+                "coupon_code": {
+                    "type": "string",
+                    "example": "",
+                    "description": "product coupon code"
+                },
+                "name": {
+                    "type": "string",
+                    "example": "",
+                    "description": "name of product name"
+                }
+            },
+            "xml": {
+                "name": "DealoffTheDayListing"
+            }
+        },
+        "DealLikeDislike": {
+            "type": "object",
+            "required": [
+                "product_id",
+                "type",
+                "type_value",
+            ],
+            "properties": {
+                "product_id": {
+                    "type": "number",
+                    "example": "1",
+                    "description": "product id"
+                },
+                "type": {
+                    "type": "string",
+                    "example": "like",
+                    "description": "like and dislike"
+                },
+                "type_value": {
+                    "type": "number",
+                    "example": "1",
+                    "description": "1 or 0"
+                },
+                "device_uid": {
+                    "type": "string",
+                    "example": "DEV123",
+                    "description": "device user id"
+                }
+            },
+            "xml": {
+                "name": "DealLikeDislike"
+            }
+        }, 
+
+        "addComment": {
+            "type": "object",
+            "required": [
+                "product_id",
+                "comment",
+            ],
+            "properties": {
+                "product_id": {
+                    "type": "integer",
+                    "example": "1",
+                    "description": "product id"
+                },
+                "comment": {
+                    "type": "string",
+                    "example": "Test Comment",
+                    "description": "comment enter here"
+                },
+                "device_uid": {
+                    "type": "string",
+                    "example": "DEV123",
+                    "description": "device user id"
+                }
+            },
+            "xml": {
+                "name": "addComment"
+            }
+        }, 
+        "getComment": {
+            "type": "object",
+            "required": [
+                "slug",
+            ],
+            "properties": {
+                "slug": {
+                    "type": "string",
+                    "example": "6ct-duracell-cr2032-3v-lithium-battery-reg-16-69",
+                    "description": "product slug"
+                },
+                "device_uid": {
+                    "type": "string",
+                    "example": "DEV123",
+                    "description": "device user id"
+                }
+            },
+            "xml": {
+                "name": "getComment"
+            }
+        },   
+        "getCommentReply": {
+            "type": "object",
+            "required": [
+                "comment_id",
+            ],
+            "properties": {
+                "comment_id": {
+                    "type": "integer",
+                    "example": "41",
+                    "description": "comment id"
+                },
+                "device_uid": {
+                    "type": "string",
+                    "example": "DEV123",
+                    "description": "device user id"
+                }
+            },
+            "xml": {
+                "name": "getCommentReply"
+            }
+        }, 
+        "getTagUsers": {
+            "type": "object",
+            "required": [
+              
+            ],
+            "properties": {
+                "keyword": {
+                    "type": "string",
+                    "example": "Nir",
+                    "description": "keyword enter here"
+                }
+            },
+            "xml": {
+                "name": "getTagUsers"
+            }
+        },
+        "CommentsLikeDislike": {
+            "type": "object",
+            "required": [
+                "product_id",
+                "comment_id",
+                "type",
+                "type_value",
+            ],
+            "properties": {
+                "product_id": {
+                    "type": "number",
+                    "example": "260",
+                    "description": "product id"
+                },
+                "comment_id": {
+                    "type": "number",
+                    "example": "41",
+                    "description": "comment id"
+                },
+                "type": {
+                    "type": "string",
+                    "example": "like",
+                    "description": "like and dislike"
+                },
+                "type_value": {
+                    "type": "number",
+                    "example": "1",
+                    "description": "1 or 0"
+                },
+                "device_uid": {
+                    "type": "string",
+                    "example": "DEV123",
+                    "description": "device user id"
+                }
+            },
+            "xml": {
+                "name": "CommentsLikeDislike"
+            }
+        },
+        "addCommentReply": {
+            "type": "object",
+            "required": [
+                "product_id",
+                "comment_id",
+                "comment",
+            ],
+            "properties": {
+                "product_id": {
+                    "type": "integer",
+                    "example": "260",
+                    "description": "product id"
+                }, 
+                "comment_id": {
+                    "type": "integer",
+                    "example": "41",
+                    "description": "comment id"
+                },
+                "comment": {
+                    "type": "string",
+                    "example": "Test Comment",
+                    "description": "comment enter here"
+                },
+                "device_uid": {
+                    "type": "string",
+                    "example": "DEV123",
+                    "description": "device user id"
+                }
+            },
+            "xml": {
+                "name": "addCommentReply"
+            }
+        }, 
+
+        "BlogDetails": {
+            "type": "object",
+            "required": [
+                "slug"
+            ],
+            "properties": {
+                "slug": {
+                    "type": "string",
+                    "example": "blog-44",
+                    "description": "Blog slug"
+                }
+            },
+            "xml": {
+                "name": "BlogDetails"
+            }
+        },
+        "HomepageSearchData": {
+            "type": "object",
+            "required": [
+                "query",
+            ],
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "example": "door",
+                    "description": "search keyword"
+                }
+            },
+            "xml": {
+                "name": "HomepageSearchData"
+            }
+        },
+        "PushNotificationsList": {
+            "type": "object",
+            "required": [
+                "device_uid"
+            ],
+            "properties": {
+                "device_uid": {
+                    "type": "string",
+                    "example": "DEV123",
+                    "description": "device_uid"
+                }
+            },
+            "xml": {
+                "name": "PushNotificationsList"
+            }
+        }, 
+        "markReadNotification": {
+            "type": "object",
+            "required": [
+                "device_uid"
+            ],
+            "properties": {
+                "device_uid": {
+                    "type": "string",
+                    "example": "DEV123",
+                    "description": "device_uid"
+                }
+            },
+            "xml": {
+                "name": "markReadNotification"
+            }
+        },
+    },
+    "parameters": {
+        "Platform": {
+            "name": "Platform",
+            "in": "header",
+            "description": "operating-system - ios/android",
+            "default": "android",
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "name": "Version",
+            "in": "header",
+            "description": "Device Version",
+            "required": true,
+            "default": "1.0.0",
+            "type": "string"
+        },
+        "IsGguest": {
+            "name": "IsGguest",
+            "in": "header",
+            "description": "Guest User",
+            "required": true,
+            "type": "boolean"
+        },
+        "HeaderAuth": {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization token of user from the login api response",
+            "required": true,
+            "default": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjAuMjA5XC9kZWFsbGlzdGluZ2FwcFwvYXBpXC9sb2dpbiIsImlhdCI6MTY1MDYyNTE3MiwibmJmIjoxNjUwNjI1MTcyLCJqdGkiOiJldFhXdWk2emRjY3FaUmdIIiwic3ViIjoxNywicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.nisbOoPT3pCGoniBX7JscZ479vDawg0j6ev361Say58",
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "Dashboard": true,
+    "Roles": true,
+    "Permissions": true,
+    "Configuration": true,
+    "EmailTemplates": true,
+    "StaticPages": true,
+    "Users": true,
+    "Admin": true,
+    "Login": true,
+    "SocialLogin": true,
+    "Products": true,
+    "Blogs": true,
+    "Categories": true,
+    "Advertisements": true,
+    "Statistics": true,
+    "Faq": false,
+    "Notifications": true,
+    "Contactus": true,
+    "AdvertiseAffiliated": true,
+    "Slider": true
+}

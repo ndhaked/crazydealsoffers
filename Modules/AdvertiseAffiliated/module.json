@@ -1,0 +1,13 @@
+{
+    "name": "AdvertiseAffiliated",
+    "alias": "advertiseaffiliated",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AdvertiseAffiliated\\Providers\\AdvertiseAffiliatedServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -1,0 +1,43 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+RewriteCond %{REQUEST_URI} !(\.mp4|\.webm|\.css|\.js|\.jpg|\.jpeg|\.png|\.pdf|.ttf|\.eot|\.svg|\.woff|\.woff2|\.otf|\.ogg|\.gif|robots\.txt)$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(css|js|images|resources|assets|front|fonts|node_modules|storage|img|admin|lobibox|modules|tokeninput)/(.*)$ public/$1/$2 [L,NC]
+
+AddType video/mp4 mp4 m4v
+AddType audio/mp4 m4a
+AddType video/ogg ogv
+AddType audio/ogg ogg oga
+AddType video/webm webm
+
+# Disable index view
+Options -Indexes
+
+# Hide a specific file
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files composer.json>
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files package.json>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Handle Authorization Header
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "HelloIX"
+AuthUserFile /var/www/agencydemo/app/webroot/swagger/.htpasswd
+Require valid-user

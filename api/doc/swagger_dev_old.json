@@ -1,0 +1,149 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Polls App",
+        "version": "1.0.0",
+        "title": "Polls App",
+        "termsOfService": "",
+        "contact": {
+            "email": "pollsapp@yopmail.com"
+        }
+    },
+    "host": "202.157.76.21:3700/php7.2/laraveltestapi/",
+    "tags": [
+        {
+            "name": "Auth",
+            "description": "APIs related to Login and Sign Up processes"
+        },
+        {
+            "name": "Polls",
+            "description": "APIs related to Polls"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/api/auth/login": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "User Login.",
+                "description": "",
+                "operationId": "login",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Login"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/get-polls": {
+            "get": {
+                "tags": [
+                    "Polls"
+                ],
+                "summary": "Get all Polls",
+                "description": "",
+                "operationId": "getPolls",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/HeaderAuth"
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/update-user-polls-vote": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Update user polls",
+                "description": "",
+                "operationId": "update-user-polls-vote",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Login"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+    },
+    "definitions": {
+        "Login": {
+            "type": "object",
+            "required": [
+                "email",
+                "password"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "example": "n_sharma@yopmail.com",
+                    "description": "Email of user"
+                },
+                "password": {
+                    "type": "string",
+                    "example": "12345678",
+                    "description": "Password of user"
+                }
+            },
+            "xml": {
+                "name": "Login"
+            }
+        },
+    },
+    "parameters": {
+        "HeaderAuth": {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Authorization token of user from the login api response",
+            "required": false,
+            "type": "string"
+        }
+    }
+}

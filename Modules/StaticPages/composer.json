@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/staticpages",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\StaticPages\\Providers\\StaticPagesServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\StaticPages\\": ""
+        }
+    }
+}

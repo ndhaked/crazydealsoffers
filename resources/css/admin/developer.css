@@ -1,0 +1,240 @@
+form .error {
+    color: #dd4b39 !important;
+}
+.form-group.has-error label {
+    color: #dd4b39 !important;
+}
+.fa-passwd-reset > .fa-lock {
+  font-size: 0.85rem;
+}
+.faundo-admin {
+    font-size: 30px !important;
+}
+.export_filter{width: 63%;float: right;}
+.admin-loginlogo{margin-top: 0px;}
+.admin-login-title{padding-bottom: 0px !important;}
+#data_filter{width: 100% !important;}
+.bootstrap-tagsinput {width: 100%;}
+.users-list > li img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+.profile-user-img {
+   height: 97px !important;
+}
+.paddt7{padding-top: 7px;}
+.Online{color: #3c763d;}
+.asterisk { color: #D9534F !important;}
+.box-profile .upload-icon input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+.box-profile .upload-icon i {
+    color: #fff;
+    font-size: 15px;
+    line-height: 26px;
+}
+.box-profile .upload-icon {
+    height: 27px;
+    width: 27px;
+    border-radius: 50%;
+    background: #b3b0c4;
+    position: relative;
+    bottom: 37px;
+    float: right;
+    right: 78px;
+    text-align: center;
+}
+.noimage{padding: 37px;font-size: 17px;}
+
+/* preloader */
+#loader {
+   position: fixed;
+   top: 0;
+   left: 0;
+   opacity: 0.8;
+   width: 100%;
+   height: 100%;
+   background-color: #e4e7ea; 
+   z-index: 10000; 
+   display: none;
+}
+
+#status {
+   width: 30px;
+   height: 30px;
+   position: absolute;
+   left: 50%; 
+   top: 50%;
+   margin: -15px 0 0 -15px;
+   font-size: 32px;
+}
+
+.bookActionTd{text-align: center;}
+.bookingAction {
+    clear: both;
+    width: 100%;
+    padding: 2px;
+}
+.image-upload {
+    width: 158px;
+}
+.image-upload>input {
+  display: none;
+}
+
+.rosterTable.table>tbody>tr.active>td, .rosterTable.table>tbody>tr.active>th {
+    background-color: #ffffff!important;
+    padding: 5px;
+}
+.schedcol{position: relative;}
+.schedcol a{     
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 55px !important;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+.schedcol a:hover span{ opacity: 0.8;}
+.rosterTable.table>tbody>tr.active>td{text-align: center;}
+.rosterTable.table>tbody>tr.active>td.inst_colum{ text-align: left;}
+.schedcol a.blank{ position: absolute; left: 0; right: 0; top: 0; bottom: 0;}
+.rosterTable .table-responsive {
+  background: #f5f5f5 !important;
+  border: 1px solid #e0e0e0;
+}
+
+.popover-content {
+  color: #000;
+}
+
+.propwell{
+    max-width: 700px;
+    margin: 0 auto;
+}
+.popover{
+    max-width: 100%;
+    max-height: 250px;
+}
+.propwell table{text-align: center;}
+.propwell table tbody{overflow: hidden !important;}
+.propwell table th{background-color: #479af5;color: #fff;font-size: 12px;padding:5px;}
+.propwell table td{padding: 5px; text-align: left !important;}
+.propwell table tbody tr td{width: auto !important;}
+
+.popover {
+    position: fixed;
+}
+
+.profile-username{word-wrap: break-word;}
+
+.red {
+    color: #dd4b39 !important;
+}
+
+.table-bordered {
+    border: 1px solid #dbd9d9 !important;
+}
+
+.table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+    border: 1px solid #dbd9d9 !important;
+}
+.tool-img{height: 192px;}
+.investor_heading{margin-left: 6px;background: #f6eded;padding: 4px 0px 4px 11px;margin-right: 6px;}
+#ui-id-1 { max-height: 255px;overflow-y: auto;}
+ul.token-input-list-facebook li input {
+    width: 112px !important;
+}
+ul.token-input-list-facebook { width: auto !important;}
+.is_unread{background-color: #f5f5f5;}
+.padtop20{padding-top: 20px;}
+
+/* new styling */
+textarea.form-control{
+    width: 100%;
+    resize: none;
+}
+
+.ac_container{
+    margin-left: 10px !important;
+    width: 100% !important;
+}
+
+.img-push.ermsg{
+    display: flex;
+}
+
+.img-sm+.img-push {
+    margin-left: 30px;
+}
+
+.fa-trash-o{
+    color: #f00;
+}
+
+.box-comments .comment-text{
+    padding-bottom: 10px;
+    padding-right: 22px;
+}
+
+
+.box-header .user-block{
+    margin-right: 30px;
+}
+
+.box-header.with-border {
+    border-bottom: 1px solid #c4c4c4;
+}
+.box-footer{
+    position: relative;
+}
+.coverpicforcomment{width: 130px !important;height: 120px !important;}
+.deal-list-pic figure {
+  margin: 0px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  height: 220px;
+  flex-direction: column;
+  align-items: center;
+}
+img.deal-badge {
+  position: absolute;
+  top: 147px;
+  left: 13px;
+  width: 97px !important;
+  height: 28px !important;
+  display: flex;
+}
+.deal-bacth {
+  position: absolute;
+  top: 80px;
+  left: 17px;
+}
+.deal-bacth img{height: 25px;width: 25px;}
+.comment-section-list .author {
+  font-family: "hk_groteskregular";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #AEAEAE;
+}
+.comment-section-list img.verified {
+  width: 14px !important;
+  height: 14px !important;
+}
+.cmntarea.ermsg label.error {
+  margin-left: 10px;
+}
+.cmntarea.ermsg textarea.form-control {
+  width: 99% !important;
+}
+#F_AddComment .img-push{margin-left: 30px;}

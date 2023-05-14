@@ -1,0 +1,8 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 19" width="11" height="19">
+	<title>facebook-svg</title>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #ff13a7 } 
+	</style>
+	<path id="Layer" class="shp0" d="M0.56 10.44L3.44 10.44L3.44 19L6.88 19L6.88 10.44L9.76 10.44L10.19 7.1L6.88 7.1L6.88 4.97C6.88 4 7.15 3.34 8.54 3.34L10.3 3.34L10.3 0.36C10 0.32 8.95 0.23 7.73 0.23C5.18 0.23 3.44 1.78 3.44 4.64L3.44 7.1L0.56 7.1L0.56 10.44Z" />
+</svg>
