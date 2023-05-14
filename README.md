@@ -1,4 +1,4 @@
-Crazy Deals & Offers
+Crazy Deals & Offers 
 ## Getting Started
 
 Deal Listing APP is a admin panel
