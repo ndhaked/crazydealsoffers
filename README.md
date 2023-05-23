@@ -1,7 +1,7 @@
 Crazy Deals & Offers 
 ## Getting Started
 
-Deal Listing APP is a admin panel
+Crazy Deals & Offers APP is a admin panel
 
 
 ### Prerequisites
