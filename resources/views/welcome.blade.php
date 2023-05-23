@@ -105,10 +105,10 @@
     </section>
 @endif
 <section class="newsletter-sec">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 offset-lg-1 col-sm-12">
-            <div class="newsletter-inner-sec">
+    <div class="newsletter-inner-sec">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-sm-12">
                 <div class="title-main text-white">
                 <h3 class="margin-bottom-15">
                     <span>
