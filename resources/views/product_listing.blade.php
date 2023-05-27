@@ -7,10 +7,10 @@
         <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-4">
-                <div class="title-main">
-                <h3>
+                <div class="title-main mt-3 mb-3">
+                <h2 class="filter-title">
                     {{ ($search)?$search:'Latest Deals' }}           
-                </h3>
+                </h2>
             </div>
             <div class="product-list-tabs">
                 <ul class="nav nav-tabs" id="menutabs" role="tablist">
@@ -41,8 +41,8 @@
             </div>
             </div>
             <div class="col-lg-9 col-md-8">
-                <div class="title-main">
-                    <h1 id="fullHeading">
+                <div class="title-main my-3">
+                    <h1 id="fullHeading" class="filter-title">
                         {{ ($fullHeading)?$fullHeading:'' }}           
                     </h1>
                 </div>

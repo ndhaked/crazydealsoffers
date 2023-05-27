@@ -148,70 +148,69 @@
                             </div>
                         </figure>   
                     </div>
-
-                    @if(count($product->commentsLatestTwo)>0)
-                    <div class="comment-section mt-5">
-                        <div class="container">
-                            <div class="d-flex justify-content-center align-items-center row">
-                                <div class="col-8 col-sm-8">
-                                    <h3 class="title-comment">Comments</h3>
-                                </div>
-                                <div class="col-4 col-sm-4 text-right">
-                                    <a href="javascript:;" class="text-link viewAllComments" data-toggle="modal" data-target="#CommentsModal" data-href="{{route('front.getProductsCommnetsForFront',$product->slug)}}">View All</a>
-                                </div>
+                </div>
+                @if(count($product->commentsLatestTwo)>0)
+                <div class="comment-section mt-5 w-100">
+                    <div class="container">
+                        <div class="justify-content-center align-items-center row border-bottom">
+                            <div class="col-8">
+                                <h3 class="title-comment">Comments</h3>
+                            </div>
+                            <div class="col-4 col-sm-4 text-right">
+                                <a href="javascript:;" class="text-link viewAllComments" data-toggle="modal" data-target="#CommentsModal" data-href="{{route('front.getProductsCommnetsForFront',$product->slug)}}">View All</a>
                             </div>
                         </div>
-                        <div class="container mt-4">
-                            <div class="d-flex justify-content-center row">
-                                <div class="col-md-12">
-                                    @foreach($product->commentsLatestTwo as $comment)
-                                        <div class="d-flex flex-column comment-section-list">
-                                            <div class="p-0">
-                                                <div class="d-flex flex-row user-info">
-                                                    <img class="rounded-circle" src="{{$comment->PublisherImage}}" width="50" alt="User Image" onerror="this.src='{{onerrorReturnImage()}}'">
-                                                    <div class="d-flex flex-row justify-content-between w-100">
-                                                        <div class="d-flex flex-column justify-content-center ml-2">
-                                                            <span class="d-block name">{{$comment->PublisherName}}</span>
-                                                            <span class="author">
-                                                                @if($comment->IsAdminWithRole)
-                                                                    {{$comment->IsAdminWithRole}} <img src="{{ asset('/images/verified.svg') }}" alt="" class="verified">
-                                                                @endif
-                                                                &nbsp;
-                                                            </span>
-                                                        </div>
-                                                        <div class="d-flex flex-column justify-content-center ml-2">
-                                                            <span class="date">{{$comment->created_at->diffForHumans()}}</span>
-                                                        </div>
+                    </div>
+                    <div class="container mt-4">
+                        <div class="d-flex justify-content-center row">
+                            <div class="col-md-12">
+                                @foreach($product->commentsLatestTwo as $comment)
+                                    <div class="d-flex flex-column comment-section-list">
+                                        <div class="p-0">
+                                            <div class="d-flex flex-row user-info">
+                                                <img class="rounded-circle" src="{{$comment->PublisherImage}}" width="50" alt="User Image" onerror="this.src='{{onerrorReturnImage()}}'">
+                                                <div class="d-flex flex-row justify-content-between w-100">
+                                                    <div class="d-flex flex-column justify-content-center ml-2">
+                                                        <span class="d-block name">{{$comment->PublisherName}}</span>
+                                                        <span class="author">
+                                                            @if($comment->IsAdminWithRole)
+                                                                {{$comment->IsAdminWithRole}} <img src="{{ asset('/images/verified.svg') }}" alt="" class="verified">
+                                                            @endif
+                                                            &nbsp;
+                                                        </span>
                                                     </div>
-                                                </div>
-                                                <div class="comments-view">
-                                                    <div class="mt-2">
-                                                        <p class="comment-text">{{ $comment->comment }}</p>
+                                                    <div class="d-flex flex-column justify-content-center ml-2">
+                                                        <span class="date">{{$comment->created_at->diffForHumans()}}</span>
                                                     </div>
-                                                    <div class="text-right">
-                                                        <span class="likes-text"><img src="{{ asset('/images/like.svg') }}" alt="" class="likes">{{$comment->likes()}}</span>
-                                                    </div>
-                                                    @if($comment->replies()->count() > 0)
-                                                    <div class="d-flex mb-3">
-                                                        <a href="javascript:;" class="more-comments replypoptoggle"  data-toggle="modal" data-target="#CommentsModal" data-href="{{route('front.getProductsCommnetsForFront',$product->slug)}}" data-cmntid="replyblk{{$comment->id}}">View {{$comment->replies()->count()}} Replies</a>
-                                                    </div>
-                                                    @endif
                                                 </div>
                                             </div>
+                                            <div class="comments-view">
+                                                <div class="mt-2">
+                                                    <p class="comment-text">{{ $comment->comment }}</p>
+                                                </div>
+                                                <div class="text-right">
+                                                    <span class="likes-text"><img src="{{ asset('/images/like.svg') }}" alt="" class="likes">{{$comment->likes()}}</span>
+                                                </div>
+                                                @if($comment->replies()->count() > 0)
+                                                <div class="d-flex mb-3">
+                                                    <a href="javascript:;" class="more-comments replypoptoggle"  data-toggle="modal" data-target="#CommentsModal" data-href="{{route('front.getProductsCommnetsForFront',$product->slug)}}" data-cmntid="replyblk{{$comment->id}}">View {{$comment->replies()->count()}} Replies</a>
+                                                </div>
+                                                @endif
+                                            </div>
                                         </div>
-                                    @endforeach
-                                    <div class="d-flex flex-column comment-section-list no-more-comments">
-                                        <div class="no-more-comment-bottom">
-                                            <p class="m-0 p-0">These comments were made via app only</p>
-                                            <input type="hidden" name="page" id="page" value="1">
-                                        </div>
+                                    </div>
+                                @endforeach
+                                <div class="d-flex flex-column comment-section-list no-more-comments">
+                                    <div class="no-more-comment-bottom">
+                                        <p class="m-0 p-0">These comments were made via app only</p>
+                                        <input type="hidden" name="page" id="page" value="1">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    @endif
                 </div>
+                @endif
             </div>
         </div>
     </section>
@@ -220,6 +219,9 @@
     header {
     position: inherit !important;
     height: 80px;
+}
+.main-wrapper{
+    padding-top:0px;
 }
 </style>
 <div class="modal fade" id="CommentsModal" tabindex="-1" role="dialog" aria-labelledby="CommentsModal" aria-hidden="true">

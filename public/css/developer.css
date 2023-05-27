@@ -29,7 +29,7 @@ img.deal-badge {
   font-family: "hk_grotesksemibold";
   font-style: normal;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 28px;
   line-height: 52px;
   color: #2E001D;
 }
@@ -39,9 +39,10 @@ img.deal-badge {
 }
 
 .user-info>img{
-  height: 50px;
-  width: 50px;
+  height: 42px;
+  width: 42px;
   object-fit: cover;
+  margin-right: 10px;
 }
 
 .comment-section-list .name {
@@ -80,7 +81,7 @@ img.deal-badge {
   font-family: "hk_groteskregular";
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 160%;
   color: #6C6C6C;
 }
@@ -148,7 +149,7 @@ img.deal-badge {
   font-family: "hk_groteskregular";
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 120%;
   color: #2E001D;
   padding: 15px;

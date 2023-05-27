@@ -179,5 +179,5 @@
         </div>
     </div>
 </section>
-@include('layouts.follow_us')
+<!-- @include('layouts.follow_us') -->
 @endsection

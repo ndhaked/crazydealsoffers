@@ -525,6 +525,18 @@ h6 {
     text-align: center;
     position: relative;
 }
+.title-main .filter-title {
+    font-family: "hk_grotesksemibold";
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    display: block;
+    margin-top: 0px;
+    text-transform: capitalize;
+    text-align: left;
+    position: relative;
+}
 .title-main h3 span {
     font-weight: 300;
 }
@@ -953,13 +965,15 @@ header .navbar .navbar-collapse {
     margin-bottom: 15px;
 }
 .product-list-tabs ul.nav-tabs li a {
-    padding: 20px;
-    border: 0px;
-    background: #fbfbfb;
-    border-radius: 10px;
-    font-size: 18px;
+    padding: 5px 15px;
+    font-size: 16px;
     position: relative;
     color: #2e001d;
+    border-radius: 0px;
+}
+.product-list-tabs ul.nav-tabs li a:focus, .product-list-tabs ul.nav-tabs li a:hover{
+    background-color: #e84c64;
+    color: #fff;
 }
 .product-list-tabs ul.nav-tabs li a.active {
     background: #e94560;
@@ -1053,7 +1067,8 @@ header .navbar .navbar-collapse {
 .main-wrapper {
     width: 100%;
     padding-bottom: 50px;
-    margin-top: 80px;
+    margin-top: 126px;
+    padding-top: 30px;
 }
 .product-detail-left {
     width: 100%;
@@ -1187,7 +1202,7 @@ header .navbar .navbar-collapse {
     padding: 20px;
     display: block;
     margin: 40px 0px;
-    font-size: 18px;
+    font-size: 16px;
     color: #6c6c6c;
 }
 .product-detail-right-promo{
@@ -1458,7 +1473,7 @@ header .navbar .navbar-collapse {
 }
 
 footer {
-    background: #2e001d;
+    background: #000;
     padding: 60px 0px;
 }
 .footer-block span {
@@ -1498,7 +1513,7 @@ footer {
     padding: 15px 0px;
     text-align: center;
     color: rgb(254 255 255 / 60%);
-    background: #2e001d;
+    background: #000;
 }
 .blog-sec {
     padding-bottom: 0px;
