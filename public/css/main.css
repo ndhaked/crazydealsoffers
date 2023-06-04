@@ -3661,7 +3661,7 @@ h6 {
   color:#2E001D;
 }
 .header-scrolled .nav-menu a:hover{
-  color:#FF13A7;
+  color:#4942E4;
 }
 @media (max-width: 673px) {
   /* #logo {
@@ -3840,7 +3840,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
   bottom: 0;
   z-index: 998;
   background: rgba(0, 0, 0, 0.8);
-  background: #FF13A7;
+  background: #4942E4;
   left: -260px;
   width: 260px;
   overflow-y: auto;
@@ -4165,10 +4165,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   z-index: -1;
   width: 340px;
   height: 340px;
-  background-image: -moz-linear-gradient(135deg, #FF13A7 0%, #FF13A7 100%);
-  background-image: -webkit-linear-gradient(135deg, #FF13A7 0%, #FF13A7 100%);
-  background-image: -ms-linear-gradient(135deg, #FF13A7 0%, #FF13A7 100%);
-  background-image: -o-linear-gradient(135deg, #FF13A7 0%, #FF13A7 100%);
+  background-image: -moz-linear-gradient(135deg, #4942E4 0%, #4942E4 100%);
+  background-image: -webkit-linear-gradient(135deg, #4942E4 0%, #4942E4 100%);
+  background-image: -ms-linear-gradient(135deg, #4942E4 0%, #4942E4 100%);
+  background-image: -o-linear-gradient(135deg, #4942E4 0%, #4942E4 100%);
 }
 @media (max-width: 991px) {
   .feature-area:after {
@@ -4222,10 +4222,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   cursor: pointer;
 }
 .feature-area .single-feature:hover h3 {
-  color: #FF13A7;
+  color: #4942E4;
 }
 .feature-area .single-feature:hover .icon{
-  background:#FF13A7;
+  background:#4942E4;
   transition: all 0.6s;
 }
 .fact-area .fact-box {

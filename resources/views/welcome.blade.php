@@ -8,50 +8,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="home-banner-slider owl-theme owl-carousel">
-                <div class="item download-slide" style="background: url(./front/images/home-banner-bg-1.png);">
-                    <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 d-flex">
-                        <div class="download-slide-left">
-                            <img src="{{ asset('/front/images/home-banner-1-mobile.png') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="download-slide-right">
-                            <div class="download-slide-right-top">
-                            <span>
-                                Never miss a deal!
-                            </span>
-                            <h3>
-                                Download our <br>
-                                Free App!
-                            </h3>
-                            <span>
-                                Because paying full price is overrated!
-                            </span>
-                            </div>
-                            <div class="home-slide-download-btn">
-                                <a href="{{ @$socialLinkData['android-app-url']['value'] }}">
-                                    <img src="{{ asset('/front/images/icons/ic-google-play.svg') }}" alt="">
-                                </a>
-                                <a href="{{ @$socialLinkData['ios-app-url']['value'] }}">
-                                    <img src="{{ asset('/front/images/icons/ic-app-store.svg') }}" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                    @foreach($sliders as $slider)
-                        <div class="item">
-                            <figure>
-                                @if($slider->url)
-                                    <a href="{{ $slider->url }}" target="_blank"><img src="{{ $slider->S3Url }}" alt=""></a>
-                                @else
-                                <a href="javascript:void(0);"><img src="{{ $slider->S3Url }}" alt=""></a>
-                                @endif
-                            </figure>
-                        </div>
-                    @endforeach
+					<div class="item" >
+					   <img src="{{ asset('/front/images/banner1.jpg') }}"> 
+					</div>
+					<div class="item" >
+					   <img src="{{ asset('/front/images/banner2.jpg') }}"> 
+					</div>
                 </div>
             </div>
         </div>
@@ -107,7 +69,7 @@
 <section class="newsletter-sec">
     <div class="container">
         <div class="row">
-            <div class="col-lg-10 offset-lg-1 col-sm-12">
+            <div class="col-lg-12">
             <div class="newsletter-inner-sec">
                 <div class="title-main text-white">
                 <h3 class="margin-bottom-15">
@@ -121,15 +83,18 @@
                 </p>
                 </div>
                 <form action="javascript:;" id="subscribe" name="subscribe" class="newsletter-form-sec" method="post" > 
-                    @csrf
-                    <input type="email" name="email" id="email" class="form-control" autocomplete="off" placeholder="Email Address*" required>
-                    <button type="submit" class="btn-primary white-btn" id="myButton" name="myButton" value="Submit">Subscribe Now</button>
+                    <div class="newsletter-inner">
+						@csrf
+						<input type="email" name="email" id="email" class="form-control" autocomplete="off" placeholder="Email Address*" required>
+						<button type="submit" class="btn-primary white-btn" id="myButton" name="myButton" value="Submit">Subscribe Now</button>
+					</div>
                 </form>
             </div>
             </div>
         </div>
     </div>
 </section>
+
 <section class="deals-listing-sec">
     <div class="container">
         <div class="row">
@@ -179,5 +144,5 @@
         </div>
     </div>
 </section>
-@include('layouts.follow_us')
+
 @endsection

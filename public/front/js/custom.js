@@ -1,6 +1,6 @@
 $('.deal-list-slider').owlCarousel({
     loop:true,
-    margin:0,
+    margin:30,
     nav: true,
     dots: false,
     responsiveClass:true,
@@ -31,7 +31,7 @@ $('.blog-detail-slider').owlCarousel({
 $('.home-banner-slider').owlCarousel({
     loop:true,
     margin:0,
-    nav: false,
+    nav: true,
     smartSpeed: 10000,
     dotsSpeed: 1000,
     dragEndSpeed: 1000,
@@ -42,10 +42,11 @@ $('.home-banner-slider').owlCarousel({
     autoplay: true,
     autoplayTimeout: 5000,
     autoplayHoverPause: false,
-    dots: true,
+    dots: false,
     items: 1,
     autoHeight: true,
     responsiveClass:true,
+	navText: ["<img src='{{ asset('/front/images/left-arrow-slider.svg') }}'>","<img src='../images/icons/right-arrow-slider.svg'>"]
 })
 
 
