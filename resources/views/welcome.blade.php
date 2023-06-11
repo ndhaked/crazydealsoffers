@@ -66,10 +66,100 @@
         </div>
     </section>
 @endif
+
+<section class="category-area">
+	<div class="container">
+		<div class="title-main">
+          <h3>Our Popular Category</h3>
+        </div>
+		<div class="category-list-area">
+			<div class="category-box">
+				<a href="">
+					<div class="categoryBox-img">
+						<img src="{{ asset('/front/images/outdoor-icon.svg') }}" alt="">
+					</div>
+					<p>Outdoor</p>
+				</a>
+			</div>
+			
+			<div class="category-box">
+				<a href="">
+					<div class="categoryBox-img">
+						<img src="{{ asset('/front/images/electronics-icon.svg') }}" alt="">
+					</div>
+					<p>Electronics</p>
+				</a>
+			</div>
+			
+			<div class="category-box">
+				<a href="">
+					<div class="categoryBox-img">
+						<img src="{{ asset('/front/images/household-icon.svg') }}" alt="">
+					</div>
+					<p>Household</p>
+				</a>
+			</div>
+			
+			<div class="category-box">
+				<a href="">
+					<div class="categoryBox-img">
+						<img src="{{ asset('/front/images/pets-icon.svg') }}" alt="">
+					</div>
+					<p>Pets</p>
+				</a>
+			</div>
+			
+			<div class="category-box">
+				<a href="">
+					<div class="categoryBox-img">
+						<img src="{{ asset('/front/images/baby-icon.svg') }}" alt="">
+					</div>
+					<p>Baby & Kids</p>
+				</a>
+			</div>
+			
+			<div class="category-box">
+				<a href="">
+					<div class="categoryBox-img">
+						<img src="{{ asset('/front/images/health-icon.svg') }}" alt="">
+					</div>
+					<p>Health & Fitness</p>
+				</a>
+			</div>
+			
+			<div class="category-box">
+				<a href="">
+					<div class="categoryBox-img">
+						<img src="{{ asset('/front/images/men-clothing-icon.svg') }}" alt="">
+					</div>
+					<p>Men’s Clothing & Accessories</p>
+				</a>
+			</div>
+			
+			<div class="category-box">
+				<a href="">
+					<div class="categoryBox-img">
+						<img src="{{ asset('/front/images/home-kitchen-icon.svg') }}" alt="">
+					</div>
+					<p>Home & Kitchen</p>
+				</a>
+			</div>
+			
+			<div class="category-box">
+				<a href="">
+					<div class="categoryBox-img">
+						<img src="{{ asset('/front/images/women-fashion-icon.svg') }}" alt="">
+					</div>
+					<p>Women’s Fashion & Accessories</p>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
 <section class="newsletter-sec">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
+        <div class="newsletter-box">
             <div class="newsletter-inner-sec">
                 <div class="title-main text-white">
                 <h3 class="margin-bottom-15">
@@ -84,12 +174,11 @@
                 </div>
                 <form action="javascript:;" id="subscribe" name="subscribe" class="newsletter-form-sec" method="post" > 
                     <div class="newsletter-inner">
-						@csrf
-						<input type="email" name="email" id="email" class="form-control" autocomplete="off" placeholder="Email Address*" required>
-						<button type="submit" class="btn-primary white-btn" id="myButton" name="myButton" value="Submit">Subscribe Now</button>
-					</div>
+                        @csrf
+                        <input type="email" name="email" id="email" class="form-control" autocomplete="off" placeholder="Email Address*" required>
+                        <button type="submit" class="btn-primary white-btn" id="myButton" name="myButton" value="Submit">Subscribe Now</button>
+                    </div>
                 </form>
-            </div>
             </div>
         </div>
     </div>

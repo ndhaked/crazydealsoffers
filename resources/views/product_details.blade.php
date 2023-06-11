@@ -103,7 +103,7 @@
                             </div>
                         </div>
                         <div class="newsletter-inner-sec product-detail-newsletter">
-                            <div class="title-main text-white">
+                            <div class="title-main">
                             <h3 class="margin-bottom-15">
                                 <span>
                                 Subscribe to our
