@@ -46,7 +46,7 @@ $('.home-banner-slider').owlCarousel({
     items: 1,
     autoHeight: true,
     responsiveClass:true,
-	navText: ["<img src='{{ asset('/front/images/left-arrow-slider.svg') }}'>","<img src='../images/icons/right-arrow-slider.svg'>"]
+	navText: ["<img src='"+_publicPath+"/front/images/icons/left-arrow-slider.svg'>","<img src='"+_publicPath+"/front/images/icons/right-arrow-slider.svg'>"]
 })
 
 

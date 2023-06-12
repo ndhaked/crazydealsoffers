@@ -47,12 +47,16 @@
             <div class="row">
             <div class="col-sm-12">
                 <span>
-                Copyright © {{date('Y')}} All Right Reserved - CN Deals & Coupons
+                Copyright © {{date('Y')}} All Right Reserved - Crazy Deals & Coupons
                 </span>
             </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+          var site_url = '{{ URL::to("/") }}';
+          var _publicPath = "{{url('/')}}";
+       </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="{{ asset('front/js/owl.carousel.js') }}"></script>
