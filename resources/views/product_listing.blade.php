@@ -41,10 +41,21 @@
             </div>
             </div>
             <div class="col-lg-9 col-md-8">
-                <div class="title-main">
+                <div class="title-main product-listing-head">
                     <h1 id="fullHeading">
                         {{ ($fullHeading)?$fullHeading:'' }}           
                     </h1>
+					<div class="product-list-select">
+						<div class="form-group">
+							<select class="form-control" id="exampleFormControlSelect1">
+							  <option>Amazon</option>
+							  <option>Flipkart</option>
+							  <option>Wallmart</option>
+							  <option>Zudio</option>
+							  <option>Myntra</option>
+							</select>
+						</div>
+					</div>
                 </div>
                 <div id="result">
                     @include('ajax_product_listing')

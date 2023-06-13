@@ -374,6 +374,7 @@
 		run: function() {
 			var padding = this.settings.stagePadding,
 				coordinates = this._coordinates,
+
 				css = {
 					'width': Math.ceil(Math.abs(coordinates[coordinates.length - 1])) + padding * 2,
 					'padding-left': padding || '',

@@ -1,3 +1,13 @@
+@media (max-width: 1600px) {
+.newsletter-inner-sec {
+    padding: 88px 0;
+}
+	
+.newsletter-sec {
+    background-size: 35%;
+}	
+}
+
 @media (max-width: 1367px) {
   .title-main h3,
   .product-detail-top-info .title-detail,
@@ -24,9 +34,6 @@
   }
 }
 @media (max-width: 1199px) {
-  .deal-list.five-items li {
-    width: 25%;
-  }
   .item.download-slide .download-slide-right h3 {
     font-size: 60px;
   }
@@ -47,11 +54,18 @@
     width: 100%;
     margin-top: 20px;
   }
+.deal-list.three-items {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}	
 }
 @media (max-width: 991px) {
-  .deal-list.five-items li {
-    width: 33.33%;
-  }
+	.deal-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.category-list-area {
+    grid-template-columns: repeat(3, minmax(0,1fr));
+}	
+	
   .deal-list-slider .deal-box figure img {
     height: 170px;
   }
@@ -127,9 +141,6 @@
     .product-desc p{
         font-size: 16px;
     } */
-  .deal-list.three-items li {
-    width: 50%;
-  }
   .header-search-panel input[type="text"] {
     width: 100%;
     background: #fff8fe;
@@ -185,6 +196,14 @@
     position: unset;
     width: auto;
   }
+ .newsletter-sec {
+    background: #d56a34;
+}
+	
+.newsletter-inner-sec {
+    width: 100%;
+}	
+	
 }
 @media (max-width: 767px) {
   /* .deal-list li a figure>img{
@@ -266,9 +285,6 @@
     padding: 15px;
     font-size: 16px;
   }
-  .deal-list.five-items li {
-    width: 50%;
-  }
   .newsletter-inner-sec {
     padding: 30px;
   }
@@ -328,7 +344,6 @@
   }
   .newsletter-form-sec .white-btn {
     width: 100%;
-    margin-top: 20px;
     font-size: 18px;
   }
   .deal-list .owl-nav {
@@ -341,6 +356,26 @@
   .footer-block {
     margin-bottom: 30px;
   }
+	
+.deal-list {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+	
+.category-list-area {
+    grid-template-columns: repeat(1, minmax(0,1fr));
+}
+	
+.category-area {
+    margin-top: 0px;
+}
+	
+.newsletter-inner-sec {
+    padding: 30px 0 0;
+}
+	
+.deal-list.three-items {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}	
 }
 @media (max-width: 480px) {
   .we-social-title {

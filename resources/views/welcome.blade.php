@@ -37,6 +37,7 @@
                             <li>
                                 <a href="{{ route('details',$product->slug) }}">
                                     <div class="deal-box">
+										<div class="deal-source ribbon"><span>Amazon</span></div>
                                         <figure>
                                         <img src="{{ $product->S3Url }}" alt="">
                                         <div class="deal-bacth">
@@ -198,6 +199,7 @@
                     <li>
                         <a href="{{ route('details',$item->slug) }}">
                             <div class="deal-box">
+							<div class="deal-source ribbon"><span>Amazon</span></div>
                             <figure>
                                 <img src="{{ $item->S3Url }}" alt="Product Image" >
                                 <div class="deal-bacth">

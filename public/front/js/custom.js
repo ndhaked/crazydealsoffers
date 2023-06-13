@@ -10,10 +10,10 @@ $('.deal-list-slider').owlCarousel({
             stagePadding: 30
         },
         480:{
-            items:2
+            items:1
         },
         700:{
-            items:3
+            items:2
         },
         1000:{
             items:4
