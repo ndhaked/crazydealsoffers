@@ -640,6 +640,7 @@ header .navbar .navbar-toggler:focus {
 }
 header .navbar .navbar-collapse {
     position: relative;
+    z-index: 2;
 }
 .header-search-panel {
     position: relative;
@@ -981,7 +982,7 @@ header .navbar .navbar-collapse .navbar-nav {
 .main-wrapper {
     width: 100%;
     padding-bottom: 50px;
-    margin-top: 80px;
+    margin-top: 140px;
 }
 .product-detail-left {
     width: 100%;
@@ -1660,6 +1661,7 @@ footer,
 
 .newsletter-sec .newsletter-box label.error {
     bottom: -37px;
+    position: absolute;
 }
 
 .home-banner-slider .owl-nav {
@@ -1823,7 +1825,9 @@ main.main-wrapper.comment-form-page {
     left: 0;
 }
 
-
+.header-mobile-search {
+    display: none;
+}
 
 
 

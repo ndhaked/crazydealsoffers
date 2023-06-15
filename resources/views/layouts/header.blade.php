@@ -4,6 +4,12 @@
         <a class="navbar-brand main-logo" href="{{ route('home') }}">
         <img src="{{ asset('/front/images/logo.svg') }}" alt="" :title="APP_NAME">
         </a>
+		<div id="wrap" class="header-search-panel header-mobile-search">
+            <form action="{{ route('products') }}" autocomplete="on" method="get">
+                <input id="search" name="search" type="text" placeholder="Search" autocomplete="off">
+                <input id="search_submit" value="Rechercher" type="submit">
+            </form>
+        </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
