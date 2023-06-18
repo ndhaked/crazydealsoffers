@@ -9,7 +9,7 @@
             <div class="col-lg-3 col-md-4">
                 <div class="title-main">
                 <h3>
-                    {{ ($search)?$search:'Latest Deals' }}           
+                    {{ ($search)?$search:'Crazy Deals' }}           
                 </h3>
             </div>
             <div class="product-list-tabs">
@@ -25,19 +25,21 @@
                         @endforeach
                     @endif
                 </ul>
+                <?php /*
                 <div class="list-promotion-box">
-                <figure>
-                    <img src="{{ asset('/front/images/left-deals-list-promotion.svg') }}" alt="" class="list-promotion">
-                    <div class="list-promotion-actions">
-                    <a href="{{ @$socialLinkData['android-app-url']['value'] }}">
-                        <img src="{{ asset('/front/images/icons/ic-google-play.svg') }} " alt="">
-                    </a>
-                    <a href="{{ @$socialLinkData['ios-app-url']['value'] }}">
-                        <img src="{{ asset('/front/images/icons/ic-app-store.svg') }}" alt="">
-                    </a>
-                    </div>
-                </figure>
+                    <figure>
+                        <img src="{{ asset('/front/images/left-deals-list-promotion.svg') }}" alt="" class="list-promotion">
+                        <div class="list-promotion-actions">
+                        <a href="{{ @$socialLinkData['android-app-url']['value'] }}">
+                            <img src="{{ asset('/front/images/icons/ic-google-play.svg') }} " alt="">
+                        </a>
+                        <a href="{{ @$socialLinkData['ios-app-url']['value'] }}">
+                            <img src="{{ asset('/front/images/icons/ic-app-store.svg') }}" alt="">
+                        </a>
+                        </div>
+                    </figure>
                 </div>
+                */ ?>
             </div>
             </div>
             <div class="col-lg-9 col-md-8">

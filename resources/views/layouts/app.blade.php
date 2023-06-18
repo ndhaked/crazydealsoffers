@@ -4,22 +4,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="robots" content="index,follow" />
     <link rel="canonical" @if(\Request::route() && \Request::route()->getName()=='home') href="{{ url()->current() }}/" @else href="{{ url()->current() }}" @endif>
-    <meta name ="description" content="@yield('description', 'Save more with Coupons, and browse a wide range of coupons from top brands at CN Deals & Coupons. Shop online with CN Deals to save big every day.')">
+    <meta name ="description" content="@yield('description', 'Save more with Coupons, and browse a wide range of coupons from top brands at Crazy Deals & Coupons. Shop online with Crazy Deals & Coupons to save big every day.')">
     <meta name="author" content="" />
     <meta name="copyright" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon-32x32.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon-crazydeals.png') }}">
 
     <meta property="og:url" content="{{ url()->current() }}" />
-    <meta property="og:title" content="@yield('og_title', config('app.name', 'Laravel'))" />
-    <meta property="og:site_name" content="{{config('app.name', 'Laravel')}}" />
-    <meta property="og:description" content="@yield('description', 'Save more with Coupons, and browse a wide range of coupons from top brands at CN Deals & Coupons. Shop online with CN Deals to save big every day.')" />
+    <meta property="og:title" content="@yield('og_title', config('app.name', 'Crazy Deals & Coupons'))" />
+    <meta property="og:site_name" content="{{config('app.name', 'Crazy Deals & Coupons')}}" />
+    <meta property="og:description" content="@yield('description', 'Save more with Coupons, and browse a wide range of coupons from top brands at Crazy Deals & Coupons. Shop online with Crazy Deals & Coupons to save big every day.')" />
     <meta property="og:type" content="{{ url()->current() }}" />
     <meta property="og:image" content="{{ asset('/front/images/logo.svg') }}" />
     <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}" />
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title',config('app.name', 'Laravel'))</title>
+    <title>@yield('title',config('app.name', 'Crazy Deals & Coupons'))</title>
 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,7 +47,7 @@
             <div class="row">
             <div class="col-sm-12">
                 <span>
-                Copyright © {{date('Y')}} All Right Reserved - Crazy Deals & Coupons
+                Copyright © {{date('Y')}} All Right Reserved - {{config('app.name')}}
                 </span>
             </div>
             </div>
@@ -224,7 +224,7 @@
                         delay: 4000,
                         delayIndicator: true,
                         position: "top right",
-                        msg: "Copied..."
+                        msg: "Code Copied"
                     });
                 })();
             });

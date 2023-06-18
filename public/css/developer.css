@@ -1,7 +1,7 @@
 .scroll_dowo.active {
   color: #d56a34 !important;
 }
-
+form .error{color: red !important;}
 .blog-desc {
   display: -webkit-box;
   -webkit-line-clamp: 3;

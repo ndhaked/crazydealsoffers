@@ -12,14 +12,18 @@
                                     <figure>
                                         <img src="{{ $product->S3Url }}" alt="Product Image">
                                         <div class="deal-bacth">
+                                            <?php /*
                                             @if($product->deal_of_the_day)
                                                 <img src="{{ asset('/front/images/deal-batch-1.svg') }}" alt="">
                                             @endif
+                                            */ ?>
                                         </div>
                                         <!-- badge -->
+                                        <?php /*
                                         @if($product->tag)
                                             <img src="{{ asset('/images/'.config::get('custom.deal_tags_color')[$product->tag]) }}" alt="" class="deal-badge">
                                         @endif
+                                        */ ?>
                                     </figure>
                                     <div class="deal-box-content">
                                     <span>

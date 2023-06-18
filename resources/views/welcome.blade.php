@@ -1,7 +1,7 @@
 @extends('layouts.app')
-@section('title','CN Deals & Coupons: Latest Offers, Coupon Codes, Discounts & Deals')
-@section('description','Save more with Coupons, and browse a wide range of coupons from top brands at CN Deals & Coupons. Shop online with CN Deals to save big every day.')
-@section('keywords','Save more with Coupons, and browse a wide range of coupons from top brands at CN Deals & Coupons. Shop online with CN Deals to save big every day.')
+@section('title',config('app.name').': Latest Offers, Coupon Codes, Discounts & Deals')
+@section('description','Save more with Coupons, and browse a wide range of coupons from top brands at Crazy Deals & Coupons. Shop online with Crazy Deals & Coupons to save big every day.')
+@section('keywords','Save more with Coupons, and browse a wide range of coupons from top brands at Crazy Deals & Coupons')
 @section('content')
 @if(getConfig('slider'))
     <section class="home-banner">
@@ -235,5 +235,4 @@
         </div>
     </div>
 </section>
-
 @endsection
