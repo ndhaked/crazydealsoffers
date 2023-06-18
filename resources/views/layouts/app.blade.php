@@ -4,37 +4,35 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="robots" content="index,follow" />
     <link rel="canonical" @if(\Request::route() && \Request::route()->getName()=='home') href="{{ url()->current() }}/" @else href="{{ url()->current() }}" @endif>
-    <meta name ="description" content="@yield('description', 'Save more with Coupons, and browse a wide range of coupons from top brands at Crazy Deals & Coupons. Shop online with Crazy Deals & Coupons to save big every day.')">
+    <meta name ="description" content="@yield('description', 'Save more with Crazy Deals & Coupons! Discover a vast selection of coupons from leading brands and enjoy incredible savings. Shop online with Crazy Deals & Coupons to unlock big discounts every day. Dont miss out on the best deals – start saving now!')">
     <meta name="author" content="" />
     <meta name="copyright" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon-crazydeals.png') }}">
-
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:title" content="@yield('og_title', config('app.name', 'Crazy Deals & Coupons'))" />
     <meta property="og:site_name" content="{{config('app.name', 'Crazy Deals & Coupons')}}" />
-    <meta property="og:description" content="@yield('description', 'Save more with Coupons, and browse a wide range of coupons from top brands at Crazy Deals & Coupons. Shop online with Crazy Deals & Coupons to save big every day.')" />
+    <meta property="og:description" content="@yield('description', 'Save more with Crazy Deals & Coupons! Discover a vast selection of coupons from leading brands and enjoy incredible savings. Shop online with Crazy Deals & Coupons to unlock big discounts every day. Dont miss out on the best deals – start saving now!')" />
     <meta property="og:type" content="{{ url()->current() }}" />
     <meta property="og:image" content="{{ asset('/front/images/logo.svg') }}" />
     <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}" />
-
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title',config('app.name', 'Crazy Deals & Coupons'))</title>
-	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="{{ asset('front/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/owl.theme.default.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/owl.carousel.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('lobibox/css/lobibox.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ URL::to('css/developer.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::to('css/crazydeals.css') }}" rel="stylesheet">
+    <?php /*
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4941797353264345"
      crossorigin="anonymous"></script>
      <meta name="google-site-verification" content="R_vcvKqTGZq6XVdb_YoNc0DJ8nsMsCTAYRUkmV_6yRA" />
+     */ ?>
 </head>
 <body>
     <div id="app">
@@ -56,7 +54,7 @@
     <script type="text/javascript">
           var site_url = '{{ URL::to("/") }}';
           var _publicPath = "{{url('/')}}";
-       </script>
+    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="{{ asset('front/js/owl.carousel.js') }}"></script>
@@ -123,8 +121,6 @@
         <style type="text/css">
         .lobibox-notify-msg{max-height:100px !important;}
         </style>
-    <!-- ------------------------------------------------------------------ -->
-          
     <script>
         $(function() {
             $("form[name='subscribe']").validate({
@@ -231,7 +227,7 @@
         }
     </script>
     @yield('script')
-
+    <?php /*
     <script type="module">
       // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js";
@@ -250,10 +246,10 @@
         appId: "1:1008570674188:web:2c1dddb2aac9e91318d229",
         measurementId: "G-JM8GF4NV4L"
       };
-
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
     </script>
+    */ ?>
 </body>
 </html>

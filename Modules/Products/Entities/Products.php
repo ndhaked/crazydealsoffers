@@ -167,7 +167,7 @@ class Products extends Model
 
     public function getMetaDescriptionAttribute()
     {
-        return 'Hurry up Get a great deal at CN Deals and Coupons on '.$this->MetaTitle;
+        return 'Hurry up Get a great deal at '.config('app.name').' on '.$this->MetaTitle;
     }
 
     public function comments()
