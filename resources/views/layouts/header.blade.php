@@ -21,9 +21,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('static.pages','aboutus') }}">About Us</a>
             </li>
+            <?php /*
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('blog') }}">Blogs</a>
             </li>
+            */ ?>
         </ul>
         <div id="wrap" class="header-search-panel">
             <form action="{{ route('products') }}" autocomplete="on" method="get">

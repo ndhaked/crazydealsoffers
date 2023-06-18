@@ -31,9 +31,9 @@ Route::get('/advertiseaffiliated/{slug}', [App\Http\Controllers\HomeController::
 
 Route::get('/faqs', [App\Http\Controllers\HomeController::class, 'faqs'])->name('faqs');
 
-Route::get('/blog', [App\Http\Controllers\HomeController::class, 'blog'])->name('blog');
 Route::get('/social-login', [App\Http\Controllers\SocialController::class, 'socialLogin'])->name('socialLogin');
-Route::get('/blog/details/{slug}', [App\Http\Controllers\HomeController::class, 'blogDetails'])->name('blog.details');
+//Route::get('/blog', [App\Http\Controllers\HomeController::class, 'blog'])->name('blog');
+//Route::get('/blog/details/{slug}', [App\Http\Controllers\HomeController::class, 'blogDetails'])->name('blog.details');
 
 Route::post('/subscribe', [App\Http\Controllers\HomeController::class, 'subscrivedMailchimp'])->name('subscribe');
 

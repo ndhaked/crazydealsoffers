@@ -40,12 +40,14 @@
 										<div class="deal-source ribbon"><span>Amazon</span></div>
                                         <figure>
                                         <img src="{{ $product->S3Url }}" alt="">
+                                        <?php /*
                                         <div class="deal-bacth">
                                             <img src="{{ asset('/front/images/deal-batch-1.svg') }}" alt="">
                                         </div>
                                         @if($product->tag)
                                             <img src="{{ asset('/images/'.config::get('custom.deal_tags_color')[$product->tag]) }}" alt="" class="deal-badge">
                                         @endif
+                                        */?>
                                         </figure>
                                         <div class="deal-box-content">
                                         <span>
@@ -171,6 +173,9 @@
                 </h3>
                 <p>
                     All the hottest deals delivered straight to your inbox! 
+                    <?php /*
+                    Stay connected with us by subscribing to our newsletter! Receive exclusive updates, promotions, and news straight to your inbox. Don't miss out on the latest trends and exciting offers – subscribe now! 
+                    */ ?>
                 </p>
                 </div>
                 <form action="javascript:;" id="subscribe" name="subscribe" class="newsletter-form-sec" method="post" > 
@@ -202,6 +207,7 @@
 							<div class="deal-source ribbon"><span>Amazon</span></div>
                             <figure>
                                 <img src="{{ $item->S3Url }}" alt="Product Image" >
+                                <?php /*
                                 <div class="deal-bacth">
                                     @if($item->deal_of_the_day)
                                         <img src="{{ asset('/front/images/deal-batch-1.svg') }}" alt="Deal of the day">
@@ -210,6 +216,7 @@
                                 @if($item->tag)
                                     <img src="{{ asset('/images/'.config::get('custom.deal_tags_color')[$item->tag]) }}" alt="" class="deal-badge">
                                 @endif
+                                */ ?>
                             </figure>
                             <div class="deal-box-content">
                                 <span>
