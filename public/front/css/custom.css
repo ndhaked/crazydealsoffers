@@ -579,7 +579,7 @@ header .navbar-expand-lg .navbar-nav li a.nav-link {
     font-size: 16px;
     color: #2e001d;
     font-weight: 400;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
     transition: all 0.3s;
 }
 header .navbar-expand-lg .navbar-nav li a.nav-link:hover {
@@ -648,7 +648,7 @@ header .navbar .navbar-collapse {
     border-radius: 4px;
 }
 header .navbar .navbar-collapse .navbar-nav {
-    padding-right: 80px;
+    padding-right: 20px;
 }
 /* Header css ends */
 /* ------------------ */
@@ -982,7 +982,7 @@ header .navbar .navbar-collapse .navbar-nav {
 .main-wrapper {
     width: 100%;
     padding-bottom: 50px;
-    margin-top: 140px;
+    margin-top: 80px;
 }
 .product-detail-left {
     width: 100%;
@@ -998,7 +998,7 @@ header .navbar .navbar-collapse .navbar-nav {
 }
 .detail-top-social {
     display: flex;
-    justify-content: start;
+    justify-content: center;
 }
 .detail-top-social ul {
     padding: 0px;
@@ -1829,7 +1829,14 @@ main.main-wrapper.comment-form-page {
     display: none;
 }
 
+.newsletter-box .newsletter-inner-sec {
+    width: 55%;
+    padding: 88px 0;
+}
 
+.newsletter-box .newsletter-inner-sec .title-main p {
+    line-height: 31px;
+}
 
 
 

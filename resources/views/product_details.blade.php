@@ -131,8 +131,8 @@
         </div>
 		
     		<div class="product-details-area">
-    			<div class="row">
-    				<div class="container">
+    			<div class="container">
+    				<div class="row">
     		       <div class="col-lg-12">
                     <div class="product-desc">
                             <p>

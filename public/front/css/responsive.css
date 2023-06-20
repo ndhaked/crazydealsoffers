@@ -215,6 +215,10 @@
 .header-search-panel.header-mobile-search form {
     display: flex;
     align-items: center;
+}
+.newsletter-box .newsletter-inner-sec {
+    width: 100%;
+    padding: 40px 0;
 }	
 	
 }
@@ -336,9 +340,31 @@ header .navbar .navbar-toggler {
 header .navbar .navbar-collapse {
     position: absolute;
     top: 52px;
-    width: 100%;
+    width: calc(100% - 30px);
     z-index: 99;
-}	
+    box-shadow: 3px 6px 12px rgb(118 118 118 / 38%);
+}
+header .navbar-expand-lg .navbar-nav li a.nav-link {
+    padding: 0 20px;
+}
+.newsletter-inner {
+    display: inline-block;
+    width: 100%;
+}
+	
+.newsletter-form-sec .white-btn {
+    padding: 10px 0 !important;
+    display: inline-block;
+    width: 100%;
+    margin-top: 9px;
+}
+.newsletter-sec .newsletter-box label.error {
+    bottom: -37px;
+    position: initial;
+    color: #fff !important;
+    font-size: 12px;
+}
+	
 	
 }
 @media (max-width: 575px) {
@@ -461,6 +487,12 @@ header .navbar .navbar-toggler {
   .we-social-links ul li a img {
     max-width: 80px;
   }
+.navbar-light .navbar-brand img {
+    height: 33px;
+}
+.navbar-light .navbar-brand {
+    margin-bottom: 8px;
+}	
 }
 @media (max-width: 414px) {
   .deal-list.five-items li,
