@@ -181,7 +181,7 @@ jQuery(document).ready(function () {
                 return false;
             }
             var extension = $("#"+MediaId).val().split('.').pop().toUpperCase();
-            if (extension != "PNG" && extension != "JPG" && extension != "GIF" && extension != "JPEG") {
+            if (extension != "WEBP" && extension != "PNG" && extension != "JPG" && extension != "GIF" && extension != "JPEG" && extension != "SVG") {
                  $(function () {
                         (function () {
                             $(".btn-close").trigger("click");

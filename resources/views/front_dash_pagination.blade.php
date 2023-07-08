@@ -46,13 +46,17 @@
 </div>
 <script type="text/javascript">
 function paginate(url='',data){ 
-	$("#menutabs a").removeClass('active');
-	$(data).addClass('active');
+	if(url != 'platform_id'){
+		$("#menutabs a").removeClass('active');
+		$(data).addClass('active');
+	}
 	if(url==''){
 		var  url = "{{Request::url()}}";
+	}else if(url == 'platform_id'){
+		var platform_id = $(data).val();
+		var  url = "{{Request::url()}}"+'?platform='+platform_id;
 	}
 	var _changeUrl = url;
-	
 	$.ajax({
 		type: "get",
 		url: _changeUrl,

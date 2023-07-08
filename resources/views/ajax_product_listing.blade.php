@@ -6,11 +6,13 @@
                 @if(count($products)>0)
                     @foreach($products as $product)
                         <li>
-                            <a href="{{ route('details',$product->slug) }}">
+                            <a href="{{ route('details',$product->slug) }}" title="View detail">
                                 <div class="deal-box">
-									<div class="deal-source ribbon"><span>Amazon</span></div>
+                                    @if($product->platform)
+									<div class="deal-source ribbon"><span>{{ucwords($product->platform->name)}}</span></div>
+                                    @endif
                                     <figure>
-                                        <img src="{{ $product->S3Url }}" alt="Product Image">
+                                        <img src="{{ $product->S3Url }}" alt="Product Image" title="{{$product->name}}">
                                         <div class="deal-bacth">
                                             <?php /*
                                             @if($product->deal_of_the_day)
@@ -18,7 +20,6 @@
                                             @endif
                                             */ ?>
                                         </div>
-                                        <!-- badge -->
                                         <?php /*
                                         @if($product->tag)
                                             <img src="{{ asset('/images/'.config::get('custom.deal_tags_color')[$product->tag]) }}" alt="" class="deal-badge">

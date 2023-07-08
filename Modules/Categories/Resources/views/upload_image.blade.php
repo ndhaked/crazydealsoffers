@@ -8,7 +8,7 @@
                 <span onclick="document.getElementById('mediaId').click()" id="basic-addon2" class="input-group-addon btn"><i class="fa fa-plus"></i></span>
             </div>
             {{ Form::hidden('image',null, ['id'=>'f_mediaId','title'=>'Please upload category image']) }}
-      <div class="description"><small>Max 2Mb image size allowed. Allowed types : jpeg, png, jpg, gif.
+      <div class="description"><small>Max 2Mb image size allowed. Allowed types : jpeg, png, jpg, gif,svg.
       </small></div>
       </div>
 </div>

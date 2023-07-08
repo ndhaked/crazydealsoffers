@@ -78,7 +78,7 @@ class StaticPages extends Model
 
     public function getMetaTitleAttribute()
     {
-        return$this->name.' - CN Deals & Coupons';
+        return$this->name.' - Crazy Deals coupons & Offers';
     }
 
     /**

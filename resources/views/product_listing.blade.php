@@ -49,13 +49,7 @@
                     </h1>
 					<div class="product-list-select">
 						<div class="form-group">
-							<select class="form-control" id="exampleFormControlSelect1">
-							  <option>Amazon</option>
-							  <option>Flipkart</option>
-							  <option>Wallmart</option>
-							  <option>Zudio</option>
-							  <option>Myntra</option>
-							</select>
+                            {!! Form::select('platform',[''=>'Filter By']+$platforms, @$_GET['platform'], ['class' => 'form-control', 'onchange'=>"paginate('platform_id',this)"]) !!}
 						</div>
 					</div>
                 </div>

@@ -147,20 +147,23 @@
                                 <a href="{{ route('advertiseaffiliated','affiliate') }}" target="_blank">{{ trans('flash.info.affiliate_disclosure_here') }} </a> */ ?>
                             </div>
                     </div>
-                    <?php /*
+                    
                     <div class="product-detail-right-promo">
                         <figure>
-                            <img src="{{ asset('/front/images/detail-promo-banner.svg') }}" alt="">
+                            <img src="{{ asset('images/detail-promo-banner.svg') }}" alt="">
                             <div class="list-promotion-actions">
+                                <?php /*
                                 <a href="{{ @$socialLinkData['android-app-url']['value'] }}">
-                                <img src="{{ asset('/front/images/icons/ic-google-play.svg') }}" alt="">
+                                    <img src="{{ asset('/front/images/icons/ic-google-play.svg') }}" alt="">
                                 </a>
                                 <a href="{{ @$socialLinkData['ios-app-url']['value'] }}">
-                                <img src="{{ asset('/front/images/icons/ic-app-store.svg') }}" alt="">
+                                    <img src="{{ asset('/front/images/icons/ic-app-store.svg') }}" alt="">
                                 </a>
+                                */ ?>
                             </div>
                         </figure>   
                     </div>
+                    <?php /*
                     @if(count($product->commentsLatestTwo)>0)
                     <div class="comment-section mt-5">
                         <div class="container">

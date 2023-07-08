@@ -24,6 +24,7 @@ return [
     'deal_tags_color'  => array('Today Only!' => 'today_only.svg','Expired!' => 'expired.svg','FREE!' => 'free.svg','Hot Deal!' => 'hot_deal.svg','Stock Up!' => 'stock_up.svg'),
 
     'currency-sign' => env('CURRENCY_SIGN', '₦'),
+    'image-upload-on' => env('IMAGE_UPLOAD_ON', 'local'), //local,s3
 
     'token-expire-code' => 433,
 ];

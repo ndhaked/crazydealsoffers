@@ -72,7 +72,11 @@ class Categories extends Model
      */
     public function getPicturePathAttribute()
     {
-        return Storage::disk('s3')->url('images/category/'.$this->image);
+        if(\config::get('custom.image-upload-on')=='s3'){
+                return Storage::disk('s3')->url('images/category/'.$this->image);
+        }else{
+            return \URL::to('images/category/'.$this->image);
+        }
     } 
 
      /**
@@ -82,7 +86,11 @@ class Categories extends Model
      */
     public function getThumbPicturePathAttribute()
     {
-        return Storage::disk('s3')->url('images/category/'.$this->image);
+        if(\config::get('custom.image-upload-on')=='s3'){
+                return Storage::disk('s3')->url('images/category/'.$this->image);
+        }else{
+            return \URL::to('images/category/'.$this->image);
+        }
     }
 
     /**
@@ -95,7 +103,11 @@ class Categories extends Model
 
     public function getS3UrlAttribute()
     {
-        return Storage::disk('s3')->url('images/category/'.$this->image);
+        if(\config::get('custom.image-upload-on')=='s3'){
+                return Storage::disk('s3')->url('images/category/'.$this->image);
+        }else{
+            return \URL::to('images/category/'.$this->image);
+        }
     }
 
     public function product(){
@@ -104,12 +116,12 @@ class Categories extends Model
 
     public function getMetaTitleAttribute()
     {
-        return ucfirst($this->name)." Discount Offers - CN Deals & Coupons";
+        return ucfirst($this->name)." Discount Offers - Crazy Deals & Offers";
     }
 
     public function getMetaDescriptionAttribute()
     {
-        return  "Best ".ucfirst($this->name)." coupons and discounts | Find the best discount deals on ".ucfirst($this->name)." at CN Deals and Coupons.";
+        return  "Best ".ucfirst($this->name)." coupons and discounts | Find the best discount deals on ".ucfirst($this->name)." at Crazy Deals & Offers.";
     }
 
     public function getFullHeadingAttribute()

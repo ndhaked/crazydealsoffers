@@ -14,7 +14,7 @@ class ProductMediaRequest extends FormRequest
     public function rules()
     {
         return [
-            'files' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5048',
+            'files' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:5048',
         ];
     }
 

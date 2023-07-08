@@ -66,6 +66,12 @@
 <div class="row">
     <div class="col-sm-6">
         <div class="form-group ermsg">
+            <label class=" control-label">Select Platform <span class="asterisk"></span></label>
+                 {!! Form::select('platform_id',[''=>'Select Platform']+$platforms+['N/A'=>'N/A'], null, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group ermsg">
             <label class=" control-label">Select Tag <span class="asterisk"></span></label>
                  {!! Form::select('tag',[''=>'Select Tag']+config::get('custom.deal_tags'), null, ['class' => 'form-control']) !!}
         </div>

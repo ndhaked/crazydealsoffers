@@ -18,5 +18,7 @@
     "Notifications": true,
     "Contactus": true,
     "AdvertiseAffiliated": true,
-    "Slider": true
+    "Slider": true,
+    "Brands": true,
+    "Platform": true
 }

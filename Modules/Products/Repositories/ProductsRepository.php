@@ -16,15 +16,18 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\PushNotifications;
 use Illuminate\Support\Facades\Http;
 use WaleedAhmad\Pinterest\Facade\Pinterest;
+use Modules\Platform\Entities\Platform;
 
 
 class ProductsRepository implements ProductsRepositoryInterface {
 
     public $Products;
+    public $Platform;
     protected $model = 'Products';
 
-    function __construct(Products $Products,PushNotifications $PushNotifications) {
+    function __construct(Products $Products,Platform $Platform,PushNotifications $PushNotifications) {
         $this->Products = $Products;
+        $this->Platform = $Platform;
         $this->PushNotifications = $PushNotifications;
     }
 
@@ -52,15 +55,26 @@ class ProductsRepository implements ProductsRepositoryInterface {
         return Categories::where('status',1)->pluck('name', 'id')->toArray();
     }
 
+    public function getPlatforms(){
+        return $this->Platform->where('status',1)->orderBy('platform_order','asc')->pluck('name', 'id')->toArray();
+    }
+
+    public function getPlatformsWithSlug(){
+        return $this->Platform->where('status',1)->orderBy('platform_order','asc')->pluck('name', 'slug')->toArray();
+    }
+
     public function store($request)
     {
         try {
-            $filleable = $request->only('slug','category_id','name','coupon_code','price','off_on_product','expiry_date','item_purchase_link','description','delete_status','tag','user_id');
+            $filleable = $request->only('slug','category_id','name','coupon_code','price','off_on_product','expiry_date','item_purchase_link','description','delete_status','tag','user_id','platform_id');
             if($request->get('image')){
                 $filleable['image'] = $request->get('image');
             }
             if($request->get('tag')=='N/A'){
                 $filleable['tag'] = NULL;
+            }
+            if($request->get('platform_id')=='N/A'){
+                $filleable['platform_id'] = NULL;
             }
             $filleable['user_id'] = auth()->user()->id;
             $this->Products->fill($filleable);
@@ -129,8 +143,12 @@ class ProductsRepository implements ProductsRepositoryInterface {
             $file = $request->file('files');
             $filename=time().'.'.$file->getClientOriginalExtension();
             $filePath = 'images/products/' . $filename;
-            Storage::disk('s3')->put($filePath, file_get_contents($file),'public');
-            
+            if(\config::get('custom.image-upload-on')=='s3'){
+                Storage::disk('s3')->put($filePath, file_get_contents($file),'public');
+            }else{
+                $filePath = 'images/products/';
+                $filename = uploadWithResize($file,$filePath);
+            }
             $response['status'] = true;
             $response['filename'] = $filename;
             return $response;
@@ -180,12 +198,15 @@ class ProductsRepository implements ProductsRepositoryInterface {
     public function update($request,$id)
     {
         try {
-            $filleable = $request->only('slug','category_id','name','coupon_code','price','off_on_product','expiry_date','item_purchase_link','description','delete_status','tag');
+            $filleable = $request->only('slug','category_id','name','coupon_code','price','off_on_product','expiry_date','item_purchase_link','description','delete_status','tag','platform_id');
             if($request->get('image')){
                 $filleable['image'] = $request->get('image');
             }
             if($request->get('tag')=='N/A'){
                 $filleable['tag'] = NULL;
+            }
+            if($request->get('platform_id')=='N/A'){
+                $filleable['platform_id'] = NULL;
             }
             $record = $this->getRecord($id);
             $coupancode = $record->coupon_code;

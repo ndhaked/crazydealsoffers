@@ -21,6 +21,7 @@ class Products extends Model
         'slug',
     	'name',
         'category_id',
+        'platform_id',
         'coupon_code',
         'image',
         'price',
@@ -86,13 +87,17 @@ class Products extends Model
 
     public function getS3UrlAttribute()
     {
-        return Storage::disk('s3')->url('images/products/'.$this->image);
+        if(\config::get('custom.image-upload-on')=='s3'){
+                return Storage::disk('s3')->url('images/products/'.$this->image);
+        }else{
+            return \URL::to('images/products/'.$this->image);
+        }
     }
 
     public function user_favorite_products()
-   {
+    {
        return $this->hasMany(UserFavoriteProducts::class, 'product_id');
-   }  
+    }  
 
    public function userIsFavProduct()
    {
@@ -127,9 +132,14 @@ class Products extends Model
    } 
 
     public function category()
-   {
+    {
        return $this->belongsTo('Modules\Categories\Entities\Categories', 'category_id');
-   }
+    }
+
+    public function platform()
+    {
+       return $this->belongsTo('Modules\Platform\Entities\Platform', 'platform_id');
+    }
 
    // Likes
     public function likes(){

@@ -15,6 +15,8 @@ use Modules\Slider\Entities\Slider;
 use Spatie\Newsletter\NewsletterFacade as Newsletter;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Database\Eloquent\Builder;
+use Modules\Platform\Entities\Platform;
+use Modules\Products\Repositories\ProductsRepositoryInterface as ProductRepo;
 
 class HomeController extends Controller
 {
@@ -23,9 +25,11 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct(Products $Products)
+    public function __construct(Products $Products,Categories $Categories,ProductRepo $ProductRepo)
     {
        $this->Products = $Products;
+       $this->Categories = $Categories;
+       $this->ProductRepo = $ProductRepo;
     }
 
     /**
@@ -35,16 +39,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //-----------Deal of the day section-----------//
         $dealOfday = Products::where('status','active')->where('deal_of_the_day',1)->orderBy('id', 'DESC')->where('expiry_date', '>', utctodtc_4now())->limit(10)->get();
-        
-        //--------------All Deals section--------------//
         $allDeals  = Products::where('status','active')->orderBy('id', 'DESC')->where('expiry_date', '>', utctodtc_4now())->limit(10)->get();
-        
-        //-----------fetch slider image---------------------//
         $sliders = Slider::where('status',1)->orderBy('slider_order')->get();
-                
-        return view('welcome',compact('dealOfday','allDeals','sliders'));
+        $categories = $this->Categories->where('status',1)->orderBy('category_order','asc')->get();
+        return view('welcome',compact('dealOfday','allDeals','sliders','categories'));
     }    
 
     public function staticPages($slug)
@@ -101,7 +100,7 @@ class HomeController extends Controller
         }
         //-----------social & app url-----------//
         $search = ($request->search)?$request->search:'';  
-        $products  = Products::where('status','active')
+        $products  = Products::with(['category','platform'])->where('status','active')
                         ->orderBy('id', 'DESC')
                         ->where('expiry_date', '>', utctodtc_4now())
                         ->whereHas('category', function(Builder $query) use($category,$search) {
@@ -123,8 +122,8 @@ class HomeController extends Controller
         $metaDescription = "Get the top deals every day on every featured product, check today's eye-catching discount deals here. Don't forget to check these coupon codes, discounted deals, and offers before shopping online.";
         if($category){
             $fullHeading = '';
-            $metaTitle = ucfirst($category).' Discount Offers - CN Deals & Coupons';
-            $metaDescription = "Best ".ucfirst($category)." coupons and discounts | Find the best discount deals on ".ucfirst($category)." at CN Deals and Coupons.";
+            $metaTitle = ucfirst($category).' Discount Offers - Crazy Deals & Coupons';
+            $metaDescription = "Best ".ucfirst($category)." coupons and discounts | Find the best discount deals on ".ucfirst($category)." at Crazy Deals & Coupons.";
             $cat= Categories::where('slug',$category)->first();
             if($cat){
                 $metaTitle = $cat->MetaTitle;
@@ -132,13 +131,14 @@ class HomeController extends Controller
                 $fullHeading = $cat->FullHeading;
             }
         }
-        return view('product_listing',compact('categories','search','products','category','metaTitle','metaDescription','fullHeading'));
+        $platforms  =    $this->ProductRepo->getPlatformsWithSlug();
+        return view('product_listing',compact('categories','search','products','category','metaTitle','metaDescription','fullHeading','platforms'));
     }
 
     public function ajaxFilterProducts($request,$category)
     {
         $search = ($request->search)?$request->search:'';  
-        $products  = Products::where('status','active')
+        $products  = Products::with(['category','platform'])->where('status','active')
                         ->orderBy('id', 'DESC')
                         ->where('expiry_date', '>', utctodtc_4now())
                         ->whereHas('category', function(Builder $query) use($category,$search) {
@@ -151,14 +151,20 @@ class HomeController extends Controller
                             if($search){
                                 $query->where('name', 'like', '%' . $search . '%');
                             }
-                        })
-                        ->paginate(12);
+                        });
+            if($request->platform){
+                $platform = Platform::where('slug',$request->platform)->first();
+                if($platform){
+                    $products = $products->where('platform_id',$platform->id);
+                }
+            }
+            $products = $products->paginate(12);
             $fullHeading = 'All Products';
             $metaTitle = 'Deal of the day: Grab the best coupons deals & offers every day';
             $metaDescription = "Get the top deals every day on every featured product, check today's eye-catching discount deals here. Don't forget to check these coupon codes, discounted deals, and offers before shopping online.";
             if($category){
-                $metaTitle = ucfirst($category).' Discount Offers - CN Deals & Coupons';
-                $metaDescription = "Best ".ucfirst($category)." coupons and discounts | Find the best discount deals on ".ucfirst($category)." at CN Deals and Coupons.";
+                $metaTitle = ucfirst($category).' Discount Offers - Crazy Deals & Coupons';
+                $metaDescription = "Best ".ucfirst($category)." coupons and discounts | Find the best discount deals on ".ucfirst($category)." at Crazy Deals & Coupons.";
                 $cat= Categories::where('slug',$category)->first();
                 if($cat){
                     $metaTitle = $cat->MetaTitle;
@@ -183,6 +189,7 @@ class HomeController extends Controller
 
     public function subscrivedMailchimp(Request $request)
     {
+        $data = array('name'=>"Virat Gandhi");
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
         ]);
@@ -208,5 +215,4 @@ class HomeController extends Controller
         }
         return $status;
     }
-    
 }

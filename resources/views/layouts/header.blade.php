@@ -29,7 +29,7 @@
         </ul>
         <div id="wrap" class="header-search-panel">
             <form action="{{ route('products') }}" autocomplete="on" method="get">
-                <input id="search" name="search" type="text" placeholder="Search" autocomplete="off">
+                <input id="search" name="search" type="text" placeholder="Search for products" autocomplete="off">
                 <input id="search_submit" value="Rechercher" type="submit">
             </form>
         </div>

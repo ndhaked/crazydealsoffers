@@ -79,16 +79,16 @@ class AdvertiseAffiliated extends Model
     public function getMetaTitleAttribute()
     {
         if($this->slug == 'affiliate'){
-            return "Affiliate Disclosure - CN Deals & Coupons";
+            return "Affiliate Disclosure - Crazy Deals coupons & Offers";
         }
-        return 'Advertise With Us - CN Deals & Coupons';
+        return 'Advertise With Us - Crazy Deals coupons & Offers';
     }
 
     public function getMetaDescriptionAttribute()
     {
         if($this->slug == 'affiliate'){
-            return "Our Platforms contain links to affiliate websites, and we always have your best interests at heart no matter what.";
+            return "Our platform may contain links to affiliate websites, but please rest assured that our primary goal is to provide you with the best possible deals and savings opportunities.";
         }
-        return "CN Deals & Coupons help you to reach our unique audience. The Local offers a wide-ranging commercial portfolio; from sponsored content.";
+        return "At Crazy Deals Coupons & Offers, we take pride in connecting businesses with our unique audience. With our platform, The Local, we offer a comprehensive commercial portfolio that includes various advertising opportunities to suit your needs, ranging from sponsored content and more.";
     } 
 }

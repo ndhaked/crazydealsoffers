@@ -47,7 +47,7 @@ class Blogs extends Model
 
     public function getMetaTitleAttribute()
     {
-        return $this->title.' - OLE Rooms';
+        return $this->title.' - Crazy Deals coupons & Offers';
     }
     
     public function getS3UrlAttribute()

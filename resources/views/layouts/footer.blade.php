@@ -11,11 +11,13 @@
                                         Affiliate Disclosure
                                     </a>
                                 </li>
+                                <?php /*
                                 <li>
                                     <a href="{{ route('advertiseaffiliated','advertise') }}">
                                         Advertise With Us
                                     </a>
                                 </li>
+                                */ ?>
                             </ul>
                         </div>
                     </div>

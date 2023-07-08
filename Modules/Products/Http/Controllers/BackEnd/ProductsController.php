@@ -48,44 +48,38 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        
         $token_error=[];
         //getting validity of facebook and pinterest token
-        $facebook_token_validity=DB::table('social_tokens')->where('planform', 'facebook')->first();
+        $facebook_token_validity =DB::table('social_tokens')->where('planform', 'facebook')->first();
         if($facebook_token_validity->expiry<date('Y-m-d')){
             $token_error[]="Facebook/Instagram token"; 
         }
-        $pinterest_token_validity=DB::table('social_tokens')->where('planform', 'pinterest')->first();
+        $pinterest_token_validity =DB::table('social_tokens')->where('planform', 'pinterest')->first();
         if($pinterest_token_validity->expiry<date('Y-m-d')){
             $token_error[]="Pinterest token"; 
         }
         if(count($token_error)>0){
-        Session::flash('error', implode(' and ',$token_error)." expired please renew."); 
-        return redirect()->route('product.index');
-       
+          //Session::flash('error', implode(' and ',$token_error)." expired please renew."); 
+          //return redirect()->route('product.index');
         }
         //$groupsList=$this->facebook->getGroupsList($facebook_token_validity->token);
-		$groupsList=[
-		['id'=>425474048538804,'name'=>'Amazing Deals, Coupons & Codes! By: CN Deals & Coupons!'],
-		['id'=>962654337604810,'name'=>'CN Deals, Coupons & Promo Codes!']
-		];
-       
-        
-
+    		$groupsList=[
+        		['id'=>425474048538804,'name'=>'Amazing Deals, Coupons & Codes! By: CN Deals & Coupons!'],
+        		['id'=>962654337604810,'name'=>'CN Deals, Coupons & Promo Codes!']
+    		];
         $categories = $this->ProductRepo->getCategories();
+        $platforms  =    $this->ProductRepo->getPlatforms();
         /*$pages=$this->getFacebookPages();
         $pagesInfo=[];
         foreach($pages as $page){
             $pagesInfo[$page->id]=$page->name;
         } */
-		$pagesInfo=[
-		545781699682971 => 'CN Deals'
-		];
-       
-
-        
-        return view('products::create', compact('categories','pagesInfo','groupsList'));
+    		$pagesInfo=[
+    		  545781699682971 => 'CN Deals'
+    		];
+        return view('products::create', compact('categories','platforms','pagesInfo','groupsList'));
     }
+
     private function getFacebookPages(){
         //getting facebook pages list
         $social_token = DB::table('social_tokens')->where('planform', 'facebook')->first();
@@ -426,28 +420,27 @@ class ProductsController extends Controller
             $token_error[]="Pinterest token"; 
         }
         if(count($token_error)>0){
-        Session::flash('error', implode(' and ',$token_error)." expired please renew."); 
-        return redirect()->route('product.index');
-       
+          //Session::flash('error', implode(' and ',$token_error)." expired please renew."); 
+          //return redirect()->route('product.index');
         }
         //$groupsList=$this->facebook->getGroupsList($facebook_token_validity->token);
-		$groupsList=[
-		['id'=>425474048538804,'name'=>'Amazing Deals, Coupons & Codes! By: CN Deals & Coupons!'],
-		['id'=>962654337604810,'name'=>'CN Deals, Coupons & Promo Codes!']
-		];
-       
+    		$groupsList=[
+    	     	['id'=>425474048538804,'name'=>'Amazing Deals, Coupons & Codes! By: CN Deals & Coupons!'],
+    		    ['id'=>962654337604810,'name'=>'CN Deals, Coupons & Promo Codes!']
+    		];
         /*$pages=$this->getFacebookPages();
         $pagesInfo=[];
         foreach($pages as $page){
             $pagesInfo[$page->id]=$page->name;
         }*/
-		$pagesInfo=[
-		545781699682971 => 'CN Deals'
-		];
+    		$pagesInfo=[
+    		  545781699682971 => 'CN Deals'
+    		];
         $categories = $this->ProductRepo->getCategories();
-        $products =  $this->ProductRepo->getRecordBySlug($id);
+        $products  =  $this->ProductRepo->getRecordBySlug($id);
+        $platforms  =    $this->ProductRepo->getPlatforms();
         if($products){
-          return view('products::edit',compact('products', 'categories','groupsList','pagesInfo'));  
+          return view('products::edit',compact('products','categories','platforms','groupsList','pagesInfo'));  
         }
         Session::flash('error', trans('flash.error.reocrd_not_available_now'));
         return redirect()->route('product.index');

@@ -152,13 +152,20 @@ class CategoriesRepository implements CategoriesRepositoryInterface {
 
     public function saveCategoryPictureMedia($request)
     {
-        $file = $request->file('files');
-        $filename=time().'.'.$file->getClientOriginalExtension();
-        $filePath = 'images/category/' . $filename;
-        Storage::disk('s3')->put($filePath, file_get_contents($file),'public');
-        
-        $response['status'] = true;
-        $response['filename'] = $filename;
-        return $response;
+        if($request->hasfile('files'))
+        {
+            $file = $request->file('files');
+            $filename=time().'.'.$file->getClientOriginalExtension();
+            $filePath = 'images/category/' . $filename;
+            if(\config::get('custom.image-upload-on')=='s3'){
+                Storage::disk('s3')->put($filePath, file_get_contents($file),'public');
+            }else{
+                $filePath = 'images/category/';
+                $filename = upload($file,$filePath);
+            }
+            $response['status'] = true;
+            $response['filename'] = $filename;
+            return $response;
+        }
     }
 }
