@@ -84,16 +84,16 @@
                     Newsletter!
                 </h3>
                 <p>
-                    All the hottest deals delivered straight to your inbox! 
                     <?php /*
-                    Stay connected with us by subscribing to our newsletter! Receive exclusive updates, promotions, and news straight to your inbox. Don't miss out on the latest trends and exciting offers – subscribe now! 
+                    All the hottest deals delivered straight to your inbox! 
                     */ ?>
+                    Stay connected with us by subscribing to our newsletter! Receive exclusive updates, promotions, and news straight to your inbox. Don't miss out on the latest trends and exciting offers – subscribe now! 
                 </p>
                 </div>
                 <form action="javascript:;" id="subscribe" name="subscribe" class="newsletter-form-sec" method="post" > 
                     <div class="newsletter-inner">
                         @csrf
-                        <input type="email" name="email" id="email" class="form-control" autocomplete="off" placeholder="Email Address*" required>
+                        <input type="email" name="email" id="email" class="form-control" autocomplete="off" placeholder="Email Address" required>
                         <button type="submit" class="btn-primary white-btn" id="myButton" name="myButton" value="Submit">Subscribe Now</button>
                     </div>
                 </form>

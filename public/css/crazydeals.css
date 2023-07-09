@@ -290,3 +290,15 @@ img.deal-badge {
 .coupon-time-validity {
   background: #f4e3e3;
 }
+
+.deal-source.ribbon {
+  position: absolute;
+  left: -3px;
+  top: -3px;
+}
+.product-list-sec #fullHeading {
+  font-size: 26px;
+}
+.product-detail-top-info .title-detail {
+  font-size: 33px;
+}

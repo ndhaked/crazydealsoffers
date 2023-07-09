@@ -97,8 +97,14 @@ class UsersRepository implements UsersRepositoryInterface {
         $file = $request->file('files');
         $filename=time().$file->getClientOriginalName();
         $filePath = 'images/user/' . $filename;
-        Storage::disk('s3')->put($filePath, file_get_contents($file),'public');
-
+        if(\config::get('custom.image-upload-on')=='s3'){
+                Storage::disk('s3')->put($filePath, file_get_contents($file),'public');
+                $responsePath = \Storage::disk('s3')->url('images/user/' . $filename);
+        }else{
+            $filePath = storage_path().'/app/public/user/';
+            $filename = uploadWithResize($file,$filePath);
+            $responsePath = \URL::to('storage/user/'.$filename);
+        }
         if ($request->get('user_id')) {
             $user = $this->User->find($request->get('user_id'));
             $oldFilename = $user->FileExistsPath;
@@ -119,7 +125,7 @@ class UsersRepository implements UsersRepositoryInterface {
         $response['status_code'] = 250;
         $response['status'] = true;
         $response['filename'] = $filename;
-        $response['s3FullPath'] = \Storage::disk('s3')->url('images/user/' . $filename);
+        $response['s3FullPath'] = $responsePath;
         return $response;
     }
 

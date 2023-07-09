@@ -75,7 +75,7 @@ class Categories extends Model
         if(\config::get('custom.image-upload-on')=='s3'){
                 return Storage::disk('s3')->url('images/category/'.$this->image);
         }else{
-            return \URL::to('images/category/'.$this->image);
+            return \URL::to('storage/category/'.$this->image);
         }
     } 
 
@@ -89,7 +89,7 @@ class Categories extends Model
         if(\config::get('custom.image-upload-on')=='s3'){
                 return Storage::disk('s3')->url('images/category/'.$this->image);
         }else{
-            return \URL::to('images/category/'.$this->image);
+            return \URL::to('storage/category/'.$this->image);
         }
     }
 
@@ -106,7 +106,7 @@ class Categories extends Model
         if(\config::get('custom.image-upload-on')=='s3'){
                 return Storage::disk('s3')->url('images/category/'.$this->image);
         }else{
-            return \URL::to('images/category/'.$this->image);
+            return \URL::to('storage/category/'.$this->image);
         }
     }
 

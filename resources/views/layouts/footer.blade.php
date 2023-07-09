@@ -80,17 +80,15 @@
                                 All the hottest deals delivered straight to your inbox!
                             </p>
                         </div>
-                        <form action="javascript:void(0);" id="subscribe_footer" name="subscribe_footer"
+                        <form action="javascript:;" id="subscribe_footer" name="subscribe_footer"
                             class="newsletter-form-sec" method="post">
                             @csrf
                             <input type="text" name="email_footer" id="email_footer" class="form-control"
-                                autocomplete="off" placeholder="Email Address*" required>
+                                autocomplete="off" placeholder="Email Address" required>
                             <button type="submit" class="btn-primary white-btn" id="myButton" name="myButton"
                                 value="Submit">Subscribe Now</button>
                         </form>
                     </div>
-                    <!-- -------------------------------------------------------- -->
-
                 </div>
             </div>
         </div>

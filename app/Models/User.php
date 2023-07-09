@@ -79,7 +79,11 @@ class User extends Authenticatable implements JWTSubject
      */
     public function getPicturePathAttribute()
     {
-        return Storage::disk('s3')->url('images/user/'.$this->image);
+        if(\config::get('custom.image-upload-on')=='s3'){
+                return Storage::disk('s3')->url('images/user/'.$this->image);
+        }else{
+            return \URL::to('storage/user/'.$this->image);
+        }
     } 
 
      /**
@@ -89,7 +93,11 @@ class User extends Authenticatable implements JWTSubject
      */
     public function getThumbPicturePathAttribute()
     {
-        return Storage::disk('s3')->url('images/user/'.$this->image);
+        if(\config::get('custom.image-upload-on')=='s3'){
+                return Storage::disk('s3')->url('images/user/'.$this->image);
+        }else{
+            return \URL::to('storage/user/'.$this->image);
+        }
     }
 
     public function getFullNameAttribute()

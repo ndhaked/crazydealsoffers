@@ -146,7 +146,7 @@ class ProductsRepository implements ProductsRepositoryInterface {
             if(\config::get('custom.image-upload-on')=='s3'){
                 Storage::disk('s3')->put($filePath, file_get_contents($file),'public');
             }else{
-                $filePath = 'images/products/';
+                $filePath = storage_path().'/app/public/products/';
                 $filename = uploadWithResize($file,$filePath);
             }
             $response['status'] = true;

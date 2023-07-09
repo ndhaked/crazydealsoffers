@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Database\Eloquent\Builder;
 use Modules\Platform\Entities\Platform;
 use Modules\Products\Repositories\ProductsRepositoryInterface as ProductRepo;
+use Modules\Contactus\Entities\Subscribers;
 
 class HomeController extends Controller
 {
@@ -25,11 +26,12 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct(Products $Products,Categories $Categories,ProductRepo $ProductRepo)
+    public function __construct(Products $Products,Categories $Categories,ProductRepo $ProductRepo,Subscribers $Subscribers)
     {
        $this->Products = $Products;
        $this->Categories = $Categories;
        $this->ProductRepo = $ProductRepo;
+       $this->Subscribers = $Subscribers;
     }
 
     /**
@@ -189,7 +191,6 @@ class HomeController extends Controller
 
     public function subscrivedMailchimp(Request $request)
     {
-        $data = array('name'=>"Virat Gandhi");
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
         ]);
@@ -200,8 +201,10 @@ class HomeController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }        
-        if ( ! Newsletter::isSubscribed($request->input('email')) ) {
-            $result = Newsletter::subscribe($request->input('email'));
+        if ( !$this->Subscribers->where('email',$request->input('email'))->exists() ) {
+            //Newsletter::isSubscribed($request->input('email'))
+            //$result = Newsletter::subscribe($request->input('email'));
+            $result = $this->Subscribers->create($request->all());
             if($result){
                 $status['status'] = 'success';
                 $status['message'] = trans('flash.success.subscribe_success');

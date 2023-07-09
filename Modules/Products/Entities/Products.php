@@ -90,7 +90,7 @@ class Products extends Model
         if(\config::get('custom.image-upload-on')=='s3'){
                 return Storage::disk('s3')->url('images/products/'.$this->image);
         }else{
-            return \URL::to('images/products/'.$this->image);
+            return \URL::to('storage/products/'.$this->image);
         }
     }
 

@@ -69,7 +69,7 @@ return [
         'faq_created_successfully' => 'FAQ created successfully',
         'faq_updated_successfully' => 'FAQ updated successfully',
         'faq_deleted_successfully' => 'FAQ deleted successfully',
-        'subscribe_success' => 'Email Subscribed successfully',
+        'subscribe_success' => 'Newsletter Subscribed successfully',
         'notifications_send_successfully' => 'Notifications send successfully',
         'notifications_send_not_successfully' => 'Notifications not send successfully',
         'notifications_deleted_successfully' => 'Notifications deleted successfully',

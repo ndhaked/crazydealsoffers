@@ -3,7 +3,7 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)/$ /$1 [L,R=301]
 
-RewriteCond %{REQUEST_URI} !(\.mp4|\.webm|\.css|\.js|\.jpg|\.jpeg|\.png|\.pdf|.ttf|\.eot|\.svg|\.woff|\.woff2|\.otf|\.ogg|\.gif|robots\.txt)$ [NC]
+RewriteCond %{REQUEST_URI} !(\.mp4|\.webm|\.css|\.js|\.jpg|\.jpeg|\.png|\.webp|\.pdf|.ttf|\.eot|\.svg|\.woff|\.woff2|\.otf|\.ogg|\.gif|robots\.txt)$ [NC]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [L]
